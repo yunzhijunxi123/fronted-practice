@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* (a ID选择器的个数，b类、伪类、属性选择器的个数、
+        c元素、伪元素选择器的个数) */
+        #test #harbin{
+            color: purple;
+        }
+        #harbin{
+            color: orange;
+        }
+        /* (0,2,1) */
+        .container span.slogan{
+            color: red;  
+        }
+        /* (0,1,3) */
+        div>p>span:nth-child(1){
+            color: green;
+        }
+        .slogan{
+            color: pink !important;
+        }
+        /* div>p>span:first-child{
+            color: blue;
+        } */
+    </style>
+</head>
+<body>
+    <div class="container" id="test">
+        <p>
+            <span class="slogan" id="harbin" style="color: blue;">哈尔滨理工大学</span>
+            <br>
+            <span>欢迎</span>
+        </p>
+    </div>
+</body>
+</html>

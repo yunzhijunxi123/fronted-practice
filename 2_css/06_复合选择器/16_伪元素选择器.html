@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 目的就是选中元素的一些特殊位置 */
+        div::first-letter{
+            color: red;
+            font-size: 40px;
+        }
+        div::first-line{
+            background-color: yellow;
+        }
+        /* 选中的是div中被鼠标选择的文字必须双冒号*/
+        div::selection{
+            background-color: green;
+            color: orange;
+        }
+        /* 选中的是input中的提示文字必须双冒号*/
+        input::placeholder{
+            color: skyblue;
+        }
+        /* 选中p元素最开始的位置 */
+        p::before{
+            content: '￥';
+        }
+        /* 选中p元素最后的位置 */
+        p::after{
+            content: '.00';
+        }
+    </style>
+
+</head>
+<body>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum nisi nostrum assumenda illo excepturi, molestiae voluptas praesentium, numquam ratione odio impedit quisquam ex explicabo culpa quaerat natus illum aspernatur animi unde quae sunt dolore architecto. Dolorem expedita, quos ipsam beatae cumque doloremque deserunt exercitationem quo sequi voluptates cum, quidem error nostrum dignissimos, sint rem nam non. Quae, cumque optio!</div>
+    <br>
+    <input type="text" placeholder="请输入您的用户名">
+    <p>199</p>
+    <p>299</p>
+    <p>399</p>
+    <p>499</p>
+</body>
+</html>

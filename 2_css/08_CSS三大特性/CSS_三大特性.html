@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+        h2{
+            color: green;
+        }
+        div{
+            color: blue;
+            font-size: 40px;
+            /* 背景颜色不能继承 */
+            background-color: skyblue;
+        }
+        p{
+            color: purple;
+        }
+        *{
+            color: grey;
+        }
+        /* div,
+        p,
+        span{
+
+        } */
+    </style>
+</head>
+<body>
+    <h2 id="harbin">哈尔滨理工大学</h2>
+    <hr>
+    <div>
+        我是div中的文字<br>
+        <span>
+            我是span中的文字<br>
+            <p>
+                <span>我是p中span中的文字</span>
+                我是p中的文字
+            </p>
+        </span>
+    </div>
+</body>
+</html>

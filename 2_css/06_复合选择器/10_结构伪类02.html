@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div的最后一个儿子p元素 */
+        /* div>p:last-child{
+            color: red;
+        } */
+        /* even偶数，odd奇数 n从零开始到四 an+b */
+        /* div>p:nth-child(-1n+5){
+            color: red;
+        } */
+        /* div中的儿子中的所有p元素的第一个 */
+        div>p:first-of-type{
+            color: red;
+        }
+        div>p:last-of-type{
+            color: blue;
+        }
+        div>p:nth-of-type(3){
+            color: aqua;
+        }
+    </style>
+<body>
+    <div>
+        <span>测试</span>
+        <p>张三：98分</p>
+        <p>李四：88分</p>
+        <p>王五：78分</p>
+        <p>赵六：68分</p>
+        <p>老七：58分</p>
+        <p>老八：48分</p>
+    </div>
+</body>
+</html>

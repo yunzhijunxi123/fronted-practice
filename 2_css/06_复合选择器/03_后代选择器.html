@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ul中所有的后代li */
+        ul li{
+            color: red;
+        }
+        ol li{
+            color:green;
+        }
+        ul li a{
+            color: blue;
+        }
+        ol li a{
+            color:orange;
+        }
+        .subject li.front-end{
+            color:blue;
+        }
+        .subject div.front-end{
+            color: chocolate;
+        }
+        ul li.hello{
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>足球</li>
+        <li>篮球</li>
+        <li>
+            <a href="#">羽毛球</a>
+        </li>
+    </ul>
+    <ol >
+        <li>张三</li>
+        <li>李四</li>
+        <li>
+            <a href="#">王五</a>
+        </li>
+    </ol>
+    <ol class="subject">
+        <li class="front-end">前端</li>
+        <div class="front-end">学好前端</div>
+        <li>后端</li>
+        <li>大数据</li>
+        <li>UI</li>
+    </ol>
+    <ul>
+        <li class="hello">你好</li>
+    </ul>
+</body>
+</html>

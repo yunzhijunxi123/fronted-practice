@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* div中的子元素的第四个 */
+        div>p:nth-child(4){
+            color:red;
+        }
+        /* div中的p类型的子元素的第三个 */
+        div>p:nth-of-type(3){
+            background-color: aqua;
+        }
+        /* div中倒数第五个子元素 */
+        div>p:nth-last-child(5){
+            font-size: 30px;
+        }
+        /* div中的p类型的子元素的倒数第二个 */
+        div>p:nth-last-of-type(2){
+            color:green;
+        }
+        /* 选中的是没有兄弟的span元素 */
+        span:only-child{
+            color:orange;
+        }
+        /* 选中的是没有同类型兄弟的span元素 */
+        span:only-of-type{
+            background-color: purple;
+        }
+        /* 选中的是根元素 */
+        :root{
+            background-color: gray;
+        }
+    </style>
+<body>
+    <div>
+        <span>测试</span>
+    </div>   
+    <div>
+        <span>测试2</span>
+        <p>张三：98分</p>
+        <p>李四：88分</p>
+        <p>王五：78分</p>
+        <p>赵六：68分</p>
+        <p>老七：58分</p>
+        <p>老八：48分</p>
+        <span>测试3</span>
+    </div>
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 有加号，与div紧紧相邻(只往下看)的p元素 */
+        /* div+p{
+            color: red;
+        } */
+        /* ~选中div后所有的兄弟p元素 */
+         div~p{
+            color:blue;
+         }
+         li+li{
+            color: orange;
+         }
+    </style>
+</head>
+<body>
+    <p>前端</p>
+    <div>尚硅谷</div>
+    <p>Java</p>
+    <p>大数据</p>
+    <ul>
+        <li>主页</li>
+        <li>秒杀</li>
+        <li>订单</li>
+        <li>我的</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中具有title属性的元素 */
+        [title]{
+            color:red;
+        }
+        [title="shang2"]{
+            color:blue;
+        }
+        /* 字母a开头 */
+        [title^=a]{
+            color:orange;
+        }
+        /* 字母u结尾 */
+        [title$="u"]{
+            color:green;
+        }
+        [title*="g"]{
+            font-size: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div title="shang1">尚硅谷1</div>
+    <div title="shang2">尚硅谷2</div>
+    <div title="ashang3">尚硅谷3</div>
+    <div title="shangu">尚硅谷4</div>
+</body>
+</html>
