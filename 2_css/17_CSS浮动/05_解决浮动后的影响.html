@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父元素添加border后，不会再抢第一个元素的margin-top，
+        最后一个元素的margin-bottom */
+        .outer{
+            width: 500px;
+            background-color: gray;
+            border: 1px solid black;
+            /* 第一种解决方案 */
+            /* height: 122px; */
+            /* 第二种解决方案 */
+            /* float: left; */
+            /* 第三种解决方案 */
+            /* overflow: scroll; */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+        }
+        .box1,.box2,.box3,.box4{
+            float: left;
+        }
+        /* .box4{ */
+            /* inline让box4为行内元素 */
+            /* display: inline; */
+            /* display: inline-block; */
+            /* 消除前面所有产生浮动的影响 */
+            /* clear: both; */
+        /* } */
+        .magic{
+            /* 第四种解决方案 */
+            clear: both;
+        }
+        /* 第五种方案 */
+        /* 前面子元素都要浮动，后面都不浮动 */
+        .outer::after{
+            content: ' ';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- < class="box box0">盒子0</ div> -->
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+        <div class="box box4">盒子4</div>
+        <div class="box box5">盒子5</div>
+        <!-- <div class="magic"></div> -->
+    </div>
+    <!-- <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum consequatur cum repudiandae ipsum ipsa inventore modi corporis minus, voluptatum amet nobis vero omnis earum, veniam in nisi. Laudantium rerum corrupti cumque corporis saepe atque dolorum? Quisquam officia sit similique quaerat, labore rem nemo quam repudiandae atque reiciendis sapiente culpa dignissimos impedit dolores accusantium! Iste magnam commodi dolorem officia asperiores, provident, repudiandae omnis repellendus qui ad, ab nihil doloribus similique saepe ipsa cumque neque. Quisquam iure eum laborum unde ex quo provident hic, autem dicta commodi, nulla consequatur maiores itaque cumque. Nobis quos unde corrupti cum esse, dignissimos enim nulla tenetur?</div> -->
+</body>
+</html>

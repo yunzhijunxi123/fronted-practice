@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 父元素的边框border，不会再抢第一个子元素的margin */
+        /* 父元素的边框会阻断它的第一个子元素的外边距与父元素的外边距的重叠 */
+        .outer{
+            width: 500px;
+            height: 400px;
+            background-color: gray;
+            border: 1px solid black;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            margin: 10px;
+            float: left;
+        }
+        .box1{
+            width: 200px;
+            float: left;
+            height:230px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">盒子1</div>
+        <div class="box box2">盒子2</div>
+        <div class="box box3">盒子3</div>
+    </div>
+</body>
+</html>
