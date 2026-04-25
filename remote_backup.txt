@@ -1,0 +1,4 @@
+github	https://github.com/yunzhijunxi123/fronted-practice.git (fetch)
+github	https://github.com/yunzhijunxi123/fronted-practice.git (push)
+origin	https://gitee.com/yunzhijunxi123/front-end-practice-code.git (fetch)
+origin	https://gitee.com/yunzhijunxi123/front-end-practice-code.git (push)
