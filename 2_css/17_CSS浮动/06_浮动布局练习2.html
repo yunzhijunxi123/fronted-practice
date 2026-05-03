@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .clearfix{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .leftfix{
+            float: left;
+        }
+        .rightfix{
+            float: right;
+        }
+        .container{
+            width: 960px;
+            /* 水平居中 */
+            margin: 0 auto;
+            /* 容器内行内元素和文本水平居中 */
+            text-align: center;
+        }
+        .logo{
+            width: 200px;
+        }
+        .banner1{
+            width: 540px;
+            margin: 0 10px;
+        }
+        .banner2{
+            width: 200px;
+        }
+        .logo,.banner1,.banner2{
+            background-color: gray;
+            height: 80px;
+            line-height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="page-header clearfix">
+            <div class="logo leftfix">logo</div>
+            <div class="logo banner1 leftfix">banner1</div>
+            <div class="logo banner2 leftfix">banner2</div>
+        </div>
+    </div>
+</body>
+</html>

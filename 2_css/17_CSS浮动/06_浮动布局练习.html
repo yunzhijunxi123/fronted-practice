@@ -16,7 +16,7 @@
         .rightfix{
             float: right;
         }
-        /* 清除浮动影响 */
+        /* 清除浮动影响，after在选中的元素最后添加*/
         .clearfix::after{
             content: '';
             display: block;
@@ -24,8 +24,9 @@
         }
         .container{
             width: 960px;
-            margin: 0 auto;
             /* 水平居中 */
+            margin: 0 auto;
+            /* 容器内行内元素和文本水平居中 */
             text-align: center;
         }
         .logo{

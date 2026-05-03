@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 500px;
+            border: 1px solid black;
+            background-color: skyblue;
+            padding: 20px;
+            position: relative;
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+        }
+        .box1{
+            background-color: gray;
+        }
+        .box2{
+            background-color: orange;
+            /* 绝对定位参考包含块 */
+            /* 没有脱离文档流的元素，父元素就是包括块 */
+            /* 脱离文档流的元素，第一个开启定位的祖先元素，就是他的包含块 */
+            /* 绝对定位之后，box2成了定位元素——默认宽高被内容撑开，同时自由设置宽高*/
+            position: absolute;
+            /* 绝对定位与浮动不可共存 */
+            top: 220px;
+            left: 20px;
+            transition: 1s all linear;
+            
+        }
+        .box3{
+            background-color: green;
+        }
+        /* 鼠标悬浮 */
+        .outer:hover .box2{
+            left: 220px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores ex impedit deserunt animi quasi! Accusantium possimus consectetur delectus labore laborum deleniti omnis nulla, eos hic mollitia ipsam autem corporis dolorem voluptatem repellat cum dolor voluptate ratione officiis fuga nesciunt? Natus iusto atque perferendis adipisci enim quam veniam et, eos assumenda ipsum, quis incidunt dolor voluptas nulla recusandae dicta eligendi repudiandae fugit distinctio. Corrupti blanditiis ipsa ea itaque similique? Quibusdam, voluptatum. Iure quasi nesciunt libero distinctio labore, inventore consequatur neque obcaecati laudantium amet quas quis accusamus odio eius quibusdam pariatur ducimus eos necessitatibus culpa nulla itaque aliquid. Repellendus sapiente maxime et in nostrum, voluptatum aut error maiores doloribus! Est praesentium in ducimus quam voluptates, veritatis, ad porro nisi rerum soluta quasi vitae rem error, voluptatibus voluptatum deleniti a nam placeat eius? Voluptate quisquam itaque voluptatum sint blanditiis minus iure perspiciatis maiores eum a, eveniet alias harum atque ea cum quidem labore delectus id ad et ratione suscipit perferendis expedita nemo. Magnam tempora, dolor voluptatem, dignissimos mollitia ea atque animi reprehenderit libero adipisci porro nam id, voluptatibus labore vel impedit eum. Ea atque, saepe nemo facere rerum quis illo. Qui expedita perspiciatis quod temporibus ut quam cum. Consectetur excepturi dicta praesentium expedita! Exercitationem vero earum odio sit quasi dolor, architecto molestiae? Fugit nihil veritatis odio amet dolores corporis deleniti quas quae, eum, voluptates eos quam ut a quibusdam, commodi nemo iste ipsum mollitia laboriosam? Error, at saepe ducimus nemo aut exercitationem repellendus cumque quas voluptatem nisi a obcaecati doloribus tenetur similique, officiis enim! Asperiores itaque distinctio blanditiis magni quo iste praesentium explicabo nostrum velit aliquam! Iste sapiente doloremque labore ad ea eaque est cupiditate ipsam praesentium blanditiis. Facere est sequi labore explicabo, rerum quia sapiente totam eius aut, nam necessitatibus distinctio id natus commodi quis nemo. At, maxime nulla temporibus, accusantium quisquam sapiente expedita fuga eaque laborum molestiae a et ducimus. Cupiditate, eum dolorum ex minima laudantium atque doloribus debitis veniam ullam, animi adipisci dolores aspernatur dignissimos, vero ipsa assumenda consequuntur sunt esse incidunt delectus ipsam? Assumenda sunt tempore dicta non. Deserunt exercitationem accusantium perferendis sed similique doloribus unde, provident in fugiat vero placeat facilis, quas dolorem. Rem deserunt provident voluptatum accusantium nemo molestiae officia beatae deleniti, ad possimus voluptatibus, nostrum et harum maxime sit ipsam suscipit? Ex dolore reiciendis alias libero eveniet veniam architecto ipsum magni dicta quasi laborum ullam consequuntur nemo, voluptatum ipsa, aliquid vel magnam optio eaque cupiditate? Quam atque magnam assumenda in nulla aut eveniet consectetur facere dolor iste adipisci dolores at totam dolorum soluta facilis dicta, fugit laborum nemo veritatis, mollitia consequuntur beatae quibusdam. Similique optio nostrum, libero labore, sunt dignissimos ab tempora, nisi harum dolorem voluptate maiores dolor fugit veritatis reiciendis qui tenetur iste voluptatum minima ratione perferendis itaque eaque aut. Repellat, veritatis ut. Voluptatem temporibus odit nihil magni? In optio est commodi itaque doloribus eum et quaerat vel, iure quas quibusdam ut eaque incidunt ex harum, sit autem aperiam recusandae praesentium dolor repellendus, inventore a! Voluptate facere fuga fugit ipsam impedit autem doloribus deserunt nobis.</div>
+    </div>
+</body>
+</html>

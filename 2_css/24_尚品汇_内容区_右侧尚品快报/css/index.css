@@ -1,0 +1,196 @@
+/* 基础设置 */
+.container{
+    width: 1190px;
+    margin: 0 auto;
+}
+/* #region顶部导航条start */
+.topbar{
+    height: 30px;
+    background-color: #ECECEC;
+}
+.welcome{
+    height: 30px;
+    line-height: 30px;
+    font-size: 0;
+    color: #666;
+}
+.welcome span,.welcome a{
+    font-size: 12px;
+}
+.welcome .hello{
+    margin-right: 28px;
+}
+.welcome .login{
+    padding-right: 10px;
+    border-right: 1px solid black;
+}
+.welcome .register{
+    padding-left: 10px;
+}
+
+.topbar-nav .list{
+    height: 30px;
+    line-height: 30px;
+}
+.topbar-nav .list li{
+    float: left;
+}
+.topbar-nav .list li a{
+    padding: 0 15px;
+    border-right: 1px solid #666;
+}
+.topbar-nav .list li:first-child a{
+    padding-left: 0;
+}
+.topbar-nav .list li:last-child a{
+    padding-right: 0;
+    border: 0;
+}
+
+/* #endregion顶部导航条end */
+/* #region头部start */
+.header{
+    height: 120px;
+}
+.header .search form{
+    margin: 42px 0;
+    font-size: 0;
+}
+.header .search input{
+    width: 508px;
+    height: 34px;
+    border: 1px solid #DD302D;
+}
+.header .search button{
+    width: 80px;
+    height: 36px;
+    background-color: #DD302D;
+    vertical-align: top;
+    background-image: url('../images/serch_icon.png');
+    background-repeat: no-repeat;
+    /* 先水平 后垂直 */
+    background-position: 28px 6px;
+}
+/* #endregion头部end */
+/* #region主导航区start */
+.main-nav{
+    height: 48px;
+    border-bottom: 1px solid #DD302D;
+}
+.main-nav .container .all-types{
+    width: 190px;
+    height: 48px;
+    text-align: center;
+    background-color: #DD302D;
+    line-height: 48px;
+    color: #FFF;
+    font-size: 16px;
+}
+.main-nav-list{
+    height: 48px;
+    line-height: 48px;
+}
+.main-nav-list li{
+    float:left ;
+    margin: 0 10px;
+    font-size: 16px;
+}
+/* #endregion主导航区end */
+/* #region主要内容区start */
+.main-content{
+    margin-top: 10px;
+}
+/* 找爷爷，不找父亲 */
+.main-content .slide-nav{
+    width: 190px;
+    height: 458px;
+    position: relative;
+    background-color: #F4F4F4;
+}
+.main-content .slide-nav li{
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+}
+.main-content .slide-nav li:hover{
+    background-color: #DD302D;
+}
+/* 用子代选择器 */
+.main-content .slide-nav li:hover>a{
+    color: #ECECEC;
+}
+.main-content .slide-nav li:hover .second-menu{
+    display: block;
+}
+/* 算盒子总宽度，记得带padding */
+.second-menu{
+    width: 680px;
+    height: 458px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 190px;
+    padding-left: 20px;
+    display: none;
+}
+.second-menu dl{
+    height: 36px;
+    line-height: 36px;
+}
+.second-menu dl:first-child{
+    margin-top: 10px;
+}
+.second-menu dt{
+    float: left;
+    width: 70px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+.second-menu dd{
+    float: left;
+}
+.second-menu dd a{
+    padding: 0 10px;
+    border-left: 1px solid #666;
+}
+.main-content .banner{
+    width: 690px;
+    height: 458px;
+    margin: 0 10px;
+}
+.main-content .slide-other{
+    width: 290px;
+    height: 458px;
+    
+}
+/* padding影响盒子的宽高 */
+.slide-other .message{
+    width: 260px;
+    height: 156px;
+    padding: 0 14px;
+    border: 1px solid #D9D9D9;
+}
+.slide-other .message .title{
+    height: 38px;
+    line-height: 38px;
+    border-bottom: 1px solid #D9D9D9;
+}
+.slide-other .message .title span{
+    font-size: 14px;
+}
+.slide-other .message .title a{
+    font-size: 12px;
+}
+.slide-other .message li{
+    height: 26px;
+    line-height: 26px;
+}
+.slide-other .other-nav{
+    margin-top: 10px;
+    width: 290px;
+    height: 290px;
+    background-color: #666;
+}
+
+/* #endregion主要内容区end */
