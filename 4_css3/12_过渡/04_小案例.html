@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡小案例</title>
+    <style>
+        .outer{
+            width: 400px;
+            height: 224px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mask{
+            width: 400px;
+            height: 224px;
+            background-color: black;
+            color: white;
+            /* mask漂浮起来，得以覆盖图片 */
+            position: absolute;
+            top: 0;
+            left: 0;
+            text-align: center;
+            line-height: 224px;
+            font-size: 100px;
+            opacity: 0;
+            transition: 1s linear;
+            cursor: pointer;
+        }
+        img{
+            transition: 0.5s;
+        }
+        .outer:hover img{
+            transform: scale(1.6) rotate(20deg);
+        }
+        .outer:hover .mask{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="./shanghai.jpg" alt="">
+        <div class="mask">上海</div>
+    </div>
+</body>
+</html>

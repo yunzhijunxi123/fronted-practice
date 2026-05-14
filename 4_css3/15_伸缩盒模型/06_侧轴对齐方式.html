@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        .outer{
+            width: 1000px;
+            height: 600px;
+            background-color: #888;
+            margin: 0 auto;
+            margin-top: 100px;
+            display: flex;
+            /* 主轴方向 */
+            flex-direction: row;
+            /* 主轴换行方式 */
+            flex-wrap: wrap;
+            /* 主轴对齐方式 */
+            /* justify-content: flex-start; */
+            /* 侧轴的对齐方式 */
+            /* align-items: flex-start; */
+            /* align-items: flex-end; */
+            /* align-items: center; */
+            /* 基线对齐 */
+            /* align-items: baseline; */
+            /* 延申 拉伸到整个父容器 在没有高度时生效 */
+            /* align-items: stretch; */
+
+        }
+        .inner{
+            width: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            /* border-box inner实际宽高200*200 内容区198*198 */
+            box-sizing: border-box
+        }
+        .inner1{
+            height: 200px;
+        }
+        .inner2{
+            height: 300px;
+        }
+        .inner3{
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 父元素是伸缩容器 -->
+    <!-- 直接的子元素才是伸缩项目 -->
+    <div class="outer">
+        <div class="inner inner1">1</div>
+        <div class="inner inner2">2</div>
+        <div class="inner inner3">3</div>
+
+    </div>
+</body>
+</html>

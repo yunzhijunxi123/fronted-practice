@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 标准盒模型 */
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            padding: 5px;
+            border: 5px solid black;
+            /* 内容盒子 内容区200*200 总宽高是220*220*/
+            box-sizing: content-box;
+            margin-bottom: 20px;
+        }
+        .box2{
+            
+            width: 200px;
+            height: 200px;
+            background-color: gray;
+            padding: 5px;
+            border: 5px solid black;
+            /*  内容区180*180  总宽高即为200*200 */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+</html>

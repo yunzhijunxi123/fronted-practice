@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            /* 收缩的极限 最多保证内容呈现 */
+            width: 700px;
+            height: 900px;
+            background-color: #888;
+            margin: auto;
+            display: flex;
+            /* 主轴方向  row行 column列*/
+            flex-direction: row;
+            /* 换行方式  想缩不能换行*/
+            /* flex-wrap: wrap; */
+            /* 主轴的对齐方式*/
+            justify-content: flex-start;
+            /* 侧轴对齐方式 */
+            align-content: flex-start;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+            /* flex-grow为拉伸权重值 1/3  */
+            flex-grow: 1;
+            /* 压缩权重值 加权平均 200*1+300*1+200*1=700 
+            200*1/700 300*1/700 200*1/700 */
+            /* 实际收缩比为2/7 3/7 2/7 */
+            flex-shrink: 1;
+        }
+        .inner2{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner inner1">1</div>
+        <div class="inner inner2">2</div>
+        <div class="inner inner3">3</div>
+    </div>
+</body>
+</html>

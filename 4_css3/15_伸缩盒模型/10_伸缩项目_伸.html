@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 1000px;
+            height: 900px;
+            background-color: #888;
+            margin: auto;
+            display: flex;
+            /* 主轴方向  row行 column列*/
+            flex-direction: row;
+            /* 换行方式 */
+            flex-wrap: wrap;
+            /* 主轴的对齐方式*/
+            justify-content: flex-start;
+            
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+            /* flex-grow为权重值 */
+        }
+        .inner1{
+            /* 六分之一 */
+            flex-grow: 1;
+        }
+        .inner2{
+            /* 六分之二 */
+            width: 300px;
+            flex-grow: 2;
+        }
+        .inner3{
+            /* 六分之三 */
+            flex-grow: 3;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner inner1">1</div>
+        <div class="inner inner2">2</div>
+        <div class="inner inner3">3</div>
+    </div>
+</body>
+</html>

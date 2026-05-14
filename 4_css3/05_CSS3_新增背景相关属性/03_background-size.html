@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            background-image: url('../images/bg03.jpg');
+            /* background-size: 400px 400px; */
+            /* background-size: 100% 100%; */
+            background-repeat: no-repeat;
+            /* 保证图片不走形，等比例缩放，使背景图片的宽或高，
+            与容器的宽或高相等，尽量保证图片最大，可能有空白*/
+            /* background-size: contain; */
+            /* 保证图片不走形，等比例缩放
+            ，直到完全覆盖容器，放弃部分背景图 */
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

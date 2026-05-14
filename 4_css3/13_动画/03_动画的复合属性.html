@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 1000px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            background-color: deepskyblue;
+            animation: turn-to-right 1s 0.5s linear 2 alternate-reverse forwards;
+            /* 应用动画到元素 */
+            animation-name: turn-to-right;
+            /* 动画的持续时间 */
+            animation-duration: 3s;
+            animation-delay: 0.2s;
+            /* 其他属性  */
+            /* 动画方式 */
+            animation-timing-function: linear;
+            /* 播放次数 */
+            /* animation-iteration-count: 2; */
+            /* 动画方向  reverse相反 alternate往复运动*/
+            animation-direction: alternate;
+            /* 不发生动画发生在哪里 forwards最后一帧 backwards第一帧 */
+            animation-fill-mode: backwards;
+        }
+        .outer:hover .inner{
+            /* 设置动画的播放状态 */
+            animation-play-state: paused;
+        }
+        /* 定义一个动画 定义一组关键帧  */
+        @keyframes turn-to-right{
+            /* 第一帧 */
+            from{
+                
+            }
+            /* 最后一帧 */
+            to{
+                transform: translate(900px) rotate(360deg);
+                background-color: purple;
+                border-radius: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+</html>

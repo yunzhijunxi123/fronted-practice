@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+        }
+        .outer{
+            width: 600px;
+            height: 600px;
+            background-color: #888;
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box
+        }
+        .inner3{
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <!-- 父元素是伸缩容器 -->
+    <!-- 直接的子元素才是伸缩项目 -->
+    <div class="outer">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <span class="inner inner3">
+            <span>a</span>
+            <div>b</div>
+            <div>c</div>
+        </span>
+    </div>
+</body>
+</html>

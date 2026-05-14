@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 400px;
+            height: 400px;
+            background-color: orange;
+            resize: both;
+            /* 在溢出时，内容被隐藏 */
+            overflow: scroll;
+        }
+        .box2{
+            width: 800px;
+            height: 100px;
+            background-color: skyblue;
+            /* resize: vertical;
+            overflow: scroll ; */
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">123456789</div>
+    </div>
+</body>
+</html>

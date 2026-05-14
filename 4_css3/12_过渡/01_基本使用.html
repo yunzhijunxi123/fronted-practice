@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            /* opacity透明度 */
+            opacity: 0.5;
+            /* 过渡可别放在hover里 */
+            /* 设置哪个属性需要过渡效果 */
+            /* transition-property: width,height,background-color; */
+            /* 所有能过渡的都过渡 */
+            transition: all;
+            /* 设置过渡效果 */
+            transition-duration: 1s;
+        }
+        .box1:hover{
+            width: 400px;
+            height: 400px;
+            background-color: green;
+            transform: rotate(45deg);
+            box-shadow: 0px 0px 20px black opacity;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+</body>
+</html>

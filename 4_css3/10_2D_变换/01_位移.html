@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;    
+        }
+        .outer2{
+            width: 180px;
+            height: 180px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;    
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            /* transform: translateX(50%) translateY(50%); */
+            transform: translate(50px,50px);
+        }
+        .inner2{
+            width: 60px;
+            height: 60px;
+            background-color: orange;
+            position: absolute;
+            /* 实现元素水平垂直居中 */
+            top: 50%;
+            left: 50%;
+            /* 移动自身的百分比 */
+            transform: translate(-50%,-50%);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">你好啊</div>
+    </div>
+    <div class="outer2">
+        <div class="inner2">你好啊</div>
+    </div>
+</body>
+</html>

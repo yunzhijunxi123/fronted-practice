@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            margin: 0 auto;
+            margin-top: 100px;    
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: deepskyblue;
+            /* transform: translate(100px,100px) scale(0.5); */
+            /* 坐标系在发生缩放之前 */
+            /* transform: scale(0.5) translate(100px,100px); */
+            /* 位移后，绕新的中心点旋转 */
+            transform: translate(100px,100px) rotate(30deg);
+            /* 旋转后，以旋转后的坐标轴进行位移  旋转会破坏坐标轴，把旋转放在最后比较好*/
+            /* transform: rotate(30deg) translate(100px,100px); */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">你好啊</div>
+    </div>  
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 1000px;
+            height: 900px;
+            background-color: #888;
+            display: flex;
+            /* 主轴方向  row行 column列*/
+            flex-direction: column;
+            /* 换行方式 */
+            flex-wrap: wrap;
+            /* 主轴的对齐方式*/
+            justify-content: flex-start;
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+        .inner2{
+            /* 设置伸缩项目在主轴上的基准长度
+            若主轴是横向的宽失效
+            若主轴是纵向的高失效 */
+            /* 计算主轴上有无多余空间 默认auto */
+            flex-basis: 300px;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner">1</div>
+        <div class="inner inner2">2</div>
+        <div class="inner">3</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主轴对齐方式</title>
+    <style>
+        body{
+            display: flex;
+        }
+        .outer{
+            width: 1000px;
+            height: 600px;
+            background-color: #888;
+            margin: 0 auto;
+            margin-top: 100px;
+            /* 将该元素变为了伸缩容器 */
+            display: flex;
+            /* 主轴方向 */
+            flex-direction: row;
+            /* 主轴换行方式  nowrap不换行默认值 wrap-reverse 反向换行*/
+            flex-wrap: wrap;
+            /* 主轴的对齐方式 主轴的起始位置 */
+            justify-content: flex-start;
+            /* 主轴的对齐方式 主轴的结束位置 */
+            /* justify-content: flex-end; */
+            /* 项目均匀分布 项目间的距离是项目距离边缘的2倍 */
+            /* justify-content: space-around; */
+            /* 均匀分布 项目间距离相等 项目距离边缘无距离*/
+            justify-content: space-between;
+            /* 纯粹的均匀分布 */
+            /* justify-content: space-evenly; */
+
+        }
+        .inner{
+            width: 200px;
+            height: 200px;
+            background-color: skyblue;
+            border: 1px solid black;
+            /* border-box inner实际宽高200*200 内容区198*198 */
+            box-sizing: border-box
+        }
+    </style>
+</head>
+<body>
+    <!-- 父元素是伸缩容器 -->
+    <!-- 直接的子元素才是伸缩项目 -->
+    <div class="outer">
+        <div class="inner">1</div>
+        <div class="inner">2</div>
+        <div class="inner">3</div>
+        <!-- <div class="inner">4</div>
+        <div class="inner">5</div>
+        <div class="inner">6</div>
+        <div class="inner">7</div>
+        <div class="inner">8</div>
+        <div class="inner">9</div>
+        <div class="inner">10</div> -->
+        <!-- 出现11 不再松快 -->
+        <!-- <div class="inner">11</div> -->
+
+    </div>
+</body>
+</html>
