@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //Number()
+        //字符串不是合法数字 转换为NaN
+        //字符串是空串或纯空格 转换为 0
+        //true 1 false 0
+        //null 0 undefined NaN
+
+        //专门把字符串转换为数字 1.23 变成 "1.23" 再变成 1.23
+        //parseInt() 自左向右读取。直到读取到全部有效的
+        //parseFloat()
+        let a = '123'
+        console.log(typeof a,a);
+        a = Number(a)
+        console.log(typeof a,a); 
+
+        let b = '1235px'
+        console.log(typeof b,b);
+        b = parseInt(b);
+        console.log(typeof b,b)
+
+        let c = '12.35px'
+        console.log(typeof c,c);
+        c = parseInt(c);
+        console.log(typeof c,c);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

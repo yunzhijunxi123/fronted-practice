@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            width: 600px;
+            height: 400px;
+            line-height: 400px;
+            /* 线性渐变背景 */
+            background-image: linear-gradient(red,yellow,green);
+            line-height: 400px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 100px;
+            color: white;
+            text-shadow: 0px 0px 10px black;
+        }
+        /* 只有在打印机或打印预览才应用的样式 */
+        /* 媒体查询不会提升优先级 */
+        @media print{
+            h1 {
+                /* background-image会盖掉background-color */
+                background-color: transparent;
+            }
+        }
+        /* 只有在屏幕上才应用的样式 */
+        @media screen{
+            h1 {
+                font-family: 'Times New Roman', Times, serif;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>新年快乐</h1>
+</body>
+</html>

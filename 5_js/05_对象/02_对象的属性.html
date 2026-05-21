@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 数据类型
+                原始值
+                数值 大整数 字符串 布尔值 空值 未定义 符号
+            读取的是一个对象中没有的属性 不会报错 而是undefined
+         */
+        //obj["12333#$%"]='呵呵'
+
+        let obj = Object()
+        // 使用symbol添加的属性 是不希望被外界访问的属性
+
+        // let mySymbol = Symbol()
+        // obj[mySymbol] = "通过symbol添加的属性"
+        // console.log(obj[mySymbol])
+
+
+        obj.age = 18
+        obj["gender"] ="男"
+        let str ="address"//str为变量
+        obj[str]="花果山"//等价于 obj["address"] = "花果山"
+        obj.str="哈哈"//使用.的形式添加属性时 不能使用变量 添加的是str,不是address
+        obj.f =Object()
+        obj.f.name="猪八戒"
+        obj.f.age="18"
+        console.log(obj)
+        //in运算符 检查对象是否中含有某个属性
+        console.log("age" in obj)//true
+        console.log("name" in obj)//false
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

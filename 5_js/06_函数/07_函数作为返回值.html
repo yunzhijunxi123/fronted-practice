@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在JS中 函数也是一个对象
+        */
+        function sum(a,b){
+            //函数内部怎么都要打印
+            console.log(a+b)
+        }
+        //sum(1,2)
+
+
+        function fn(){
+            // 通过return的关键字 指定函数的返回值 包括返回对象和变量
+            //return后不跟任何值或不写return   相当于返回undefined
+            alert(1230)
+            return 
+            alert(4569)
+        }
+        let result = fn()
+        console.log(result)
+
+
+        function sum2(a,b){
+            return a+b
+        }
+        let  result2 = sum2(5,8)
+        result2 = sum2(1,result2)
+        //主动打印
+        console.log(result2)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

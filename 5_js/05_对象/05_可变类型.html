@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //原始值属于不可变类型 一旦创建无法修改
+        //在内存中不会创建重复的原始值
+        let a = 10
+        let b = 10
+        a = 12
+        console.log("a=", a)
+        console.log("b=", b)
+        //对象属于可变类型
+        //如果有两个变量 同时指向一个对象
+        //一个变量修改对象时 对另外一个变量也会产生影响
+        // let obj = {name:"孙悟空"}
+        let obj = Object()
+        obj.name = "孙悟空"
+        obj.age = 18
+        let obj2 = Object()
+        let obj3 = Object()
+    
+        console.log(obj2)
+        console.log(obj3)
+    
+        //console.log(obj2===obj3)//false 全等比较 比较内存地址
+        let obj4 = obj
+        obj4.name="猪八戒"
+        console.log(obj)
+        console.log(obj4)
+        console.log(obj===obj4)
+
+        //为变量重新赋值 绝不影响其他变量
+        //当修改一个对象时 所有指向该对象的变量均会受到影响
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Window对象
+            浏览器为我们提供window对象
+            window对象代表的是浏览器窗口
+            通过该对象对窗口进行各种操作
+
+            window对象负责存储JS的内置对象和浏览器的宿主对象
+
+        */
+        //alert(window)
+        //window.alert(123)
+        //window.console.log("哈哈")
+
+        window.a = 10//向window对象中添加的属性会自动成为全局变量
+        console.log(a)
+        //var不具有块作用域
+        var b = 20
+        function fn(){
+            alert("我是fn")
+        }
+        console.log(window.b)
+        window.fn()
+
+        let c = 33
+        window.c = 44
+        console.log(c);//优先找let 33
+        
+
+        function fn2(){
+            //var d= 555//var没有块作用域 但有函数作用域
+            d = 10//自动变成window对象的属性
+        }
+        fn2()
+        console.log(d);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

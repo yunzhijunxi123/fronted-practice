@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0 ;
+        }
+        h1{
+            height: 200px;
+            background-color: gray;
+            text-align: center;
+            line-height: 200px;
+            font-size: 100px;
+        }
+        /* 且运算符 大于等于700 小于等于800 */
+        @media screen and (min-width:700px) and (max-width:800px){
+            h1{
+                background-color: orange;
+            }
+        }
+        /* 大于等于800 小于等于700 */
+        @media (min-width:800px) or (max-width:700px){
+            h1{
+                background-color: orange;
+            }
+        }
+        /* 否定not 肯定only */
+        @media not screen{
+            h1{
+                background-color: orange;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>你好啊</h1>
+</body>
+</html>

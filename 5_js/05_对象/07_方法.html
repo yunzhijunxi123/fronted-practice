@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            补充内容
+            一个对象的属性指向一个函数
+            这个函数是该对象的方法
+            调用函数就是调用对象的方法
+        */
+        let obj = {}
+        obj.name = "孙悟空"
+        obj.age = 18
+        //函数也可是对象的属性
+        obj.sayHello =function(){
+            alert("Hello")
+        }
+
+        console.log(obj);
+        obj.sayHello()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

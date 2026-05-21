@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = 1 + 1
+        a = 10 / 0 //Infinity
+        a = 10 ** 4//相当于10的4次方
+        a = 9 ** .5//9的二分之一次方
+        a = 10 % 3
+ 
+        //自动类型转换
+        //除了字符串的加法 其他运算的非数值转化为数值
+        a = 10 - '5'// 10 - 5
+        a = 10 - undefined//10-NaN
+        //字符串加法 会拼串
+        a = 'ddd' +'2'
+        a = true
+        a = a + ' '
+        console.log(typeof a,a)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

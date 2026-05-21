@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //枚举属性
+        let obj = {
+            name: "孙悟空",
+            age: "18",
+            gender: "男",
+            address:"花果山",
+            [Symbol()]:"新增属性"
+        }
+        for(let propName in obj){//有几个属性 就会执行几次 符号添加的属性不可枚举
+            console.log(propName,obj[propName])//类型 值
+        } 
+        console.log(obj)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

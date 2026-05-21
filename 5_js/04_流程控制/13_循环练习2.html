@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // for (let i = 100; i < 1000; i++) {
+        //     let a, b, c;
+        //     // 需要取整
+        //     a = parseInt(i / 100)
+        //     b = parseInt(i % 100 / 10)
+        //     c = parseInt(i % 10)
+        //     if (a ** 3 + b ** 3 + c ** 3 === a * 100 + b * 10 + c) {
+        //         console.log(i)
+        //     }
+        // }
+        for (let i = 100; i < 1000; i++) {
+            let strI = i + ""//把i转成字符串
+            // 需要取整
+            if (strI[0] ** 3 + strI[1] ** 3 + strI[2] ** 3 === i) {
+                console.log(i)
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

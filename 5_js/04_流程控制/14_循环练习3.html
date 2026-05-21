@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let num = +prompt("输入大于1整数")
+        let flag = true
+        for (let i = 2; i < num; i++) {
+            if (num % i === 0) {//检测到除了1和它自身 num除以一个数，余数为零
+                flag = false
+            } 
+        }
+        if(flag){
+            alert(`${num}是质数`)
+        }else{
+            alert(`${num}不是质数`)
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

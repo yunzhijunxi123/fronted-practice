@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+                document.write("*&nbsp;&nbsp;")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<hr>")
+
+        for (let i = 0; i < 5; i++) {//高度
+            for (let j = 0; j <= i; j++) {//宽度
+                document.write("*&nbsp&nbsp")
+            }
+            document.write("<br>")
+        }
+
+        document.write("<hr>")
+
+        for(let i=0;i<5;i++){
+            for(let j=4-i;j>=0;j--){
+                document.write("*&nbsp&nbsp")
+            }
+            document.write("<br>")
+        }
+        document.write("<hr>")
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

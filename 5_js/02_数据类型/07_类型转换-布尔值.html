@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //使用Boolean()函数
+        //没有的 空性的是false
+        let a = 1
+        a = -1//true
+        a = 0//false
+        a = NaN//false
+        a= ' '//false
+        a = null //false
+        a = undefined //false
+        a = false//false
+        a = Infinity //true
+        a ='abc'//true
+        
+        //对象都会转换为true
+        console.log(typeof a,a)
+        a =Boolean(a);
+        console.log(typeof a,a)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

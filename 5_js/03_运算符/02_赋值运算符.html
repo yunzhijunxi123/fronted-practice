@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            a += n 相当于 a = a + n
+            ？？=空赋值
+            当变量的值为null或undefined时 
+            才会对变量赋值
+         */
+        let a = 10
+        a = 5
+        a = null
+        a = undefined
+        a ??= 101
+        console.log(a)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

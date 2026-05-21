@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        /* body{
+            6 伸缩项目
+            display: flex;
+        } */
+        .outer{
+            width: 400px;
+            background-color: #888;
+            /* 以下元素可开启BFC */
+            /* 1 浮动元素 */
+            /* float: left; */
+            /* 2 绝对定位、固定定位的元素 */
+            /* position: absolute; */
+            /* 3 行内块元素 */
+            /* display: inline-block; */
+            /* 4 表格 */
+            /* display: table; */
+            /* 5 overflow的值不为visible的块元素 */
+            /* overflow: hidden; */
+            /* 7 多列容器 */
+            /* column-count: 1; */
+            display: flow-root;
+            
+        }
+        .inner{
+            width: 100px;
+            height: 100px;
+            /* 此时margin塌陷 */
+            margin: 20px;
+        }
+        .inner1{
+            background-color: orange;
+        }
+        .inner2{
+            background-color: green;
+        }
+        .inner3{
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="inner inner1"></div>
+        <div class="inner inner2"></div>
+        <div class="inner inner3"></div>
+    </div>
+    <hr style="height: 50px; background-color: red;">
+</body>
+</html>

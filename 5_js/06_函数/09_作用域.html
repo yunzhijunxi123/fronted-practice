@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            全局作用域
+            网页运行时创建 网页关闭后销毁
+            直接编写到script标签中的代码均位于全局作用域中
+            其中变量为全局变量 在哪里都能访问
+
+            局部作用域
+                块作用域 局部作用域
+                在代码块执行时创建 代码块执行完毕销毁
+                局部变量  只能在块内部访问 外部无法访问
+
+                函数作用域
+                在函数调用时产生
+                在调用结束后销毁 每次调用都会产生全新的函数作用域
+        */
+        let a = "变量a"
+        {
+            let b ="变量b"
+        }
+        
+        function fn(){
+            let c="fn中的变量c"
+            console.log(c)
+        }
+        fn()
+        //console.log(c)
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

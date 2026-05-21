@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* \   转义字符
+            \"相当于"
+            \t 制表符 输出为空格
+
+            ``  模板字符串 保留格式
+        */
+        let a = "Hello"
+        a = "你好"
+        
+        a = "这是一个'字符串'"
+        a ="呵呵呵\t哈哈哈"
+        a =  `呵呵
+                哈哈哈`
+
+
+        let name = "孙"
+        let str = `你好，${name}`
+        console.log(str)
+
+        let b = 10
+        console.log(`b = ${b}`)
+
+        let c = 5
+        c = "hhh"
+        console.log(typeof c)
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

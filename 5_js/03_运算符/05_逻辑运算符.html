@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            ！逻辑非
+            &&逻辑与
+            ||逻辑或
+
+            对于一个非布尔值取反 
+            先转换为布尔值 再进行取反
+
+            类型转换
+                字符串
+                显式转换 String()
+                隐式转换 +" "
+
+                数值
+                显式转换 Number()
+                隐式转换 +
+
+                布尔值
+                显式转换 Boolean()
+                隐式转换 ！！
+
+                逻辑与&&  找false
+                短路的与 第一个值为false 不看第二个值
+
+                第一个值false 直接返回第一个值
+                第一个值true 返回第二个值
+
+                逻辑或|| 找true
+
+
+         */
+
+
+        // true && alert(123)
+        //false && alert(123)
+
+        let a = 1
+        a = !a
+        a = 1234
+        a = !!a
+        console.log(typeof a,a)
+
+        result = 1 && 2//2
+        result = 1 && 0//0
+        result = 0 && NaN//0
+        result = 1 && NaN//NaN
+        
+        result = NaN || null //null
+
+        result =  false || false
+        false || alert(12354)
+
+        console.log(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+ 
+</html>

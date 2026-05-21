@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a="全局"
+        {
+            //let a="第一代码块中的a"
+            {
+                //let a="第二代码块中的a"
+                //就近原则
+                //直到全局作用域都没找到 则报错
+                console.log(a)
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

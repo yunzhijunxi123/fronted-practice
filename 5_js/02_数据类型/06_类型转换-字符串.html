@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        //1   调用toString()方法 将其他类型转换为字符串
+        // null和undefined 没有toString()
+        let a = 10;
+        a = true;
+        a = 11n;
+        //console.log(typeof a,a);
+        //a =a.toString()//a.toString()为"10" 需要赋值
+        //console.log(typeof a,a);
+
+        //2   调用String()函数，将其他类型转换为字符串
+        // 有toString()方法的值 就是在调用toString()
+        // null与undefined 变成 "null"与"undefined"
+        let b = 33
+        console.log(typeof b,b)
+        b = String(b)
+        console.log(typeof b,b)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

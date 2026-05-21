@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 
+            关系运算符
+            两个值的关系是否成立
+            成立true 不成立false 
+         */
+
+
+
+        let result = 10 > 5//true
+        result = 5 > 5
+        result = 5 < "10"//true
+        result = "1" > false //true
+        //两个字符串比较 逐位比较字符的Unicode编码
+        result = "abc" < "b"//true
+        result = "12" < "2"//true
+        result = +"12" < "2"//false
+        let num = 8
+        //result = 5 <num < 10 错误写法
+        result = 5 < num && num< 10
+        console.log(result)
+    </script>
+</head>
+
+<body>
+
+</body>
+ 
+</html>
