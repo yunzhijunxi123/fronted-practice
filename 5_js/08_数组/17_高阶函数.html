@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            在不修改原函数的前提下
+            someFn()函数执行时 可记录一条日志
+            对修改限制 对添加开放
+        */
+        function someFn(){
+            //console.log("记录日志");
+            return "hello"
+        }
+
+        function test(){
+            console.log("test---");
+            return "test"
+        }
+
+
+        function outer(cb){//
+            return () => {
+                console.log("记录日志.....");
+                const result= cb()
+                return result
+            }
+        }
+        let result = outer(someFn)//给someFn添加功能
+        let newTest = outer(test)
+        newTest()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

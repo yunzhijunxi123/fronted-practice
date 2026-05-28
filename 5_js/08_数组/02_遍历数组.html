@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = [1, 2, "hello", true, null, { name: "孙悟空" }, () => { }]
+        //console.log(arr);
+
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+        for (let i = arr.length - 1; i >= 0; i--) {
+            console.log(arr[i]);
+        }
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+        }
+        const personArr = [new Person("孙悟空", 18),
+        new Person("猪八戒", 28), new Person("红孩儿", 8)]
+        for (let i = 0; i < personArr.length; i++) {
+            if (personArr[i].age < 18) {
+                console.log(personArr[i]);
+
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

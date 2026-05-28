@@ -6,6 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
+
+        /*
+            a=1,a=2,a=3只是赋值 没声明就会变成隐式全局变量
+
+            var a =1 正式声明一个变量
+            
+        */
         var a = 1//全局变量a
         function fn() {
             a = 2//全局变量
@@ -16,7 +23,7 @@
 
         var a = 1//全局变量a
         function fn() {
-            console.log(a);//undefined 提升不会去外部再找
+            console.log(a);//undefined 提升 当前作用域声明了同名变量 不会再去外层作用域查找
             var a = 2//var a提升 a=2留在原地
             console.log(a);//2
         }
@@ -53,7 +60,9 @@
         fn(a)//实参
         console.log(a)//1
  
-        console.log(a)//f a(){alert(2)}
+
+        //提升function 和 var 
+        console.log(a)//f a(){alert(5)} 最后一个函数覆盖前一个
         var a =1//var只负责声明变量
         console.log(a)//1 函数被数值覆盖
 
@@ -61,7 +70,7 @@
             alert(2)
         }
         function a(){
-            alert(4)
+            alert(5)
         }
         console.log(a)//1
         var a = 3
@@ -72,6 +81,78 @@
         console.log(a)//f() {alert(4)} 
         var a
         console.log(a)//f() {alert(4)}
+
+
+
+
+        var a1 = 1
+        function fn() {
+            a1 = 2
+            console.log(a1);
+        }
+        fn()
+        console.log(a1)
+
+        var a2 = 1
+        function fn() {
+            console.log(a2);
+            var a2 = 2
+            console.log(a2);
+        }
+        fn()
+        console.log(a2)
+
+        
+        var a = 1
+        function fn(a) {
+            console.log(a);
+            a = 2
+            console.log(a);
+        }
+        fn()
+        console.log(a)
+        
+
+        var a = 1
+        function fn(a) {
+            console.log(a);
+            a = 2
+            console.log(a);
+        }
+        fn(10)
+        console.log(a)
+       
+
+        var a = 1
+        function fn(a) {
+            console.log(a);
+            a = 2
+            console.log(a);
+        }
+        fn(a)
+        console.log(a)
+ 
+
+        
+        console.log(a)
+        var a =1
+        console.log(a)
+
+        function a(){
+            alert(2)
+        }
+        function a(){
+            alert(5)
+        }
+        console.log(a)
+        var a = 3
+        console.log(a)
+        var a =function(){
+            alert(4)
+        }
+        console.log(a)
+        var a
+        console.log(a)
 
     </script>
 </head>

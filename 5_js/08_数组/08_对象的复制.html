@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const arr = ["孙悟空", "猪八戒", "沙和尚"]
+        const arr2 = arr.slice()//浅拷贝 只对对象本身进行复制 不复制对象的属性
+        //const arr3=[arr[0],arr[1],arr[2]]//浅拷贝
+        const arr3 = ["唐僧", ...arr, "白骨精"]//...arr就是arr[0],arr[1],arr[2] 浅拷贝
+        console.log(arr);
+        console.log(arr3);
+        function sum(a, b, c) {
+            return a + b + c
+        }
+        const arr4 = [10, 20, 30]
+        // sum(arr4[0],arr4[1],arr4[2])
+        let result = sum(...arr4)
+        console.log(result);
+
+        /*
+            对象的复制
+        */
+        const obj = { name: "孙悟空", age: 18 }
+        const obj2={address:"花果山"}
+        Object.assign(obj2,obj)//assign(目标对象，被复制的对象)
+        //将被复制对象中的属性复制到目标对象里 并将目标对象返回
+        const obj3 ={address:"高老庄",age:28,...obj,age:38}//将obj的属性在新对象中展开 age后面的优先
+        console.log(obj===obj2);
+        console.log(obj2);
+        console.log(obj3);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            函数 独立存在的代码块
+            方法 属于对象的函数
+
+
+            箭头函数
+                （[函数]）=> 返回值
+            例子：
+                无参 （）=>返回值
+                    a=>返回值
+                    (a,b)=>返回值
+                ()=>返回值
+                ()=>{...}
+                ()=>{
+                    ...
+                    return 返回值
+                }
+            箭头函数没有自己的this 它的this由外层作用域决定
+            箭头函数的this和它的调用方式无关
+        */
+       //普通函数
+        function fn(){
+            console.log("fn --->",this)
+        }
+        //箭头函数
+        const fn2 = () =>{
+            console.log("fn2 -->",this)
+        }
+        fn()//window
+        fn2()//window
+
+        const obj ={//把函数放进对象
+            name:"孙悟空",
+            fn,
+            fn2,
+            sayHello(){//sayHello是方法 是属于obj对象的函数
+                console.log(this.name);
+                function t(){
+                    console.log("t --> ",this);//Window
+                    
+                }
+                t()//以函数形式调用
+
+                const t2 = ()=>{
+                    console.log("t2 -->",this);//孙悟空
+                }
+                t2()
+            }
+        }
+        obj.fn()//obj
+        obj.fn2()//window
+        obj.sayHello()//孙悟空 方法 obj对象调的
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

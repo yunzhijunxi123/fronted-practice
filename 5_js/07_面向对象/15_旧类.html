@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            早期JS中 直接通过函数来定义类
+
+        */
+        var Animal = (function () {
+            function Animal() {
+
+            }
+            return Animal
+        })()
+        var Cat = (function () {
+            function Cat() {
+
+            }
+            Cat.prototype = new Animal()//让Cat的原型指向一个Animal实例
+            //cat → Cat.prototype → Animal.prototype → Object.prototype
+            return Cat
+        })()
+        var cat = new Cat()
+        console.log(cat);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

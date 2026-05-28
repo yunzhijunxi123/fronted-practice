@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            数组Array
+            存储有序数组 
+            读取不存在的元素 undefined
+        */
+       const obj = {name:"孙悟空",age:"18"}
+       const arr = new Array()
+       const arr2 = [1,2,3,4,5]
+       arr[0]=12
+       arr[1]=15
+       arr[2]=18
+       arr[3]=21
+       arr[4]=24
+       //避免非连续数组
+       arr[arr.length]=27//直接向数组最后添加元素
+       arr[arr.length]=30
+       console.log(arr);
+       console.log(arr2);
+       console.log(typeof arr);
+       console.log(arr.length);
+       
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

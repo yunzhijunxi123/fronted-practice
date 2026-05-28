@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            面向对象编程 
+                程序就是对现实世界的抽象
+                事物抽象到程序中后就变成了对象
+                一切皆对象
+                所有操作都通过对象来完成
+
+
+                事物两部分 数据和功能
+                对象两部分 属性和方法
+        */
+        const five ={
+            name:"王老五",
+            age:"18",
+            height:180,
+            weight:55,
+
+            //添加方法
+            sleep(){
+                console.log(this.name+"睡觉了");
+            },
+            eat(){
+                console.log(this.name+"吃饭了");
+            }
+        }
+        five.sleep()
+        five.eat()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

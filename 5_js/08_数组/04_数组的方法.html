@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Array.isArray()
+            检查一个对象是否是数组
+            at()
+            根据索引获取数组中的指定元素
+            concat()
+            连接两个或多个数组 
+        */
+        console.log(Array.isArray({name:"孙悟空"}));//false
+        console.log(Array.isArray([10,20]));//true
+        const arr = [10,20,30,40,50]
+        console.log(arr.at(1));//10 正数第一个
+        console.log(arr.at(-1));//50 倒数第一个
+        const arr2 = ["白骨精","蜘蛛精","玉兔精"]
+        result = arr.concat(arr2,["牛魔王","铁扇公主"])
+        console.log(result);
+        
+        
+
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

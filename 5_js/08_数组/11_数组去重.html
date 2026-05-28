@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //编写代码去除数组中重复的元素
+        const arr = [2,3,4,2,2,3,5,2,3,6]
+        //分别获取数组中的元素
+        for(let i=0;i<arr.length;i++){
+           const index = arr.indexOf(arr[i],i+1)//检查数组中有无arr[i],从i+1开始找 返回arr[i]所在位置索引
+           if(index != -1){
+                arr.splice(index,1)//删除index位置元素
+                i--
+           } 
+        }
+        console.log(arr);
+        const arr2 = [2,3,4,2,2,3,5,2,3,6]
+        const newArr = []
+        for(let ele of arr2){
+            if(newArr.indexOf(ele) === -1){//新数组中没有当前元素
+                newArr.push(ele)//添加元素
+            }
+        }
+        console.log(newArr);
+        
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

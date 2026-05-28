@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            开发中尽量减少在全局作用域中编写代码
+            var 函数作用域 可重复声明 会变量提升
+            let 块级作用域 不可重复声明 存在暂时性死区
+        */
+        // {
+        //     let a = 10
+        // }
+        // {
+        //     let a = 20
+        // }
+        // function fn(){
+        //     var a = 10
+        // }
+        // fn()
+        // function fn2(){
+        //     var a = 20
+        // }
+        //fn2()
+        //希望创建一个只执行一次的匿名函数
+        //立即执行函数 IIFE
+    
+        (function(){
+            let a = 10
+            console.log(111);
+        })();//最后的括号用于调用
+        (function(){
+            let a = 20
+            console.log(222);
+        })();
+        </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

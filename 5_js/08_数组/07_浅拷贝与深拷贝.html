@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            浅拷贝（shallow copy）
+                对对象的拷贝就是浅拷贝
+                只对对象的浅层进行复制(只复制一层 )
+                如果对象中存储的数据是原始值 拷贝的深浅不重要
+                
+        */
+        //创建一个数组
+        const arr = [{ name: "孙悟空" }, { name: "猪八戒" }]
+        
+        //浅拷贝 只会对对象本身进行复制 不会复制对象中的属性
+        const arr2 = arr.slice()//浅拷贝
+        const arr3 = structuredClone(arr)//深拷贝
+        arr[0].name="唐僧"
+        console.log(arr);
+        console.log(arr2);
+        console.log(arr3);
+        console.log(arr===arr2);//false
+        console.log(arr[0]===arr2[0]);//true
+        console.log(arr===arr3);//false
+        console.log(arr[0]===arr3[0]);//false
+        //深拷贝 不仅复制对象本身 还要复制对象中的属性和元素
+        //性能问题 不太用
+
+        
+
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

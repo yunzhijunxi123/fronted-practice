@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Array.isArray()
+            检查一个对象是否是数组
+            at()
+            根据索引获取数组中的指定元素
+            concat()
+            连接两个或多个数组 
+            indexOf()
+            获取元素在数组中第一次出现的索引
+                找到则返回元素的索引
+                没找到则返回-1
+            lastIndexOf()
+            获取元素在数组中最后一次出现的索引 从后往前查
+                找到则返回元素的索引
+                没找到则返回-1
+            join()
+            将一个数组中的元素连接为一个字符串
+            slice()
+            用来截取数组
+            两个参数均省略 对数字进行浅拷贝
+        */
+        const arr = ["孙悟空", "猪八戒", "沙和尚", "唐僧", "沙和尚"]
+        let result = arr.indexOf("沙和尚",2)//要查询的元素 与 起始位置
+        result =arr.indexOf("白骨精")
+        console.log(result);
+        let result2 = arr.lastIndexOf("沙和尚",4)//从后往前 要查询的元素 与 起始位置 
+        console.log(result2);
+        let result3 = arr.join("@")//中间的是连接符
+        console.log(result3);
+        let result4 = arr.slice(0,2)//截取起始位置 保留起始位置 实际截了前两个
+        console.log(result4);
+        let result5 = arr.slice(0)//从0到结束
+        console.log(result5);
+        let result6 = arr.slice(1,-1)//截取起始位置 第一个 保留起始位置 倒数第一个
+        console.log(result6);
+        let result7 = arr.slice()//浅拷贝
+        console.log(result7);
+
+                
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

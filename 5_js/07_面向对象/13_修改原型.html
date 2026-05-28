@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            大部分情况下 无需修改原型对象
+            原型要改 也要通过类.prototype属性去修改
+            最好不要直接给prototype去赋值 会把之前的原型覆盖
+        */
+        class Person{
+            name = "孙悟空"
+            age = 18
+            sayHello(){
+                console.log("Hello 我是",this.name);
+            }
+        }
+        class Dog{
+
+        }
+        const p = new Person()
+        const p2 = new Person()
+       
+        //修改后 所有同类实例 都能访问该方法 一个对象影响所有同类对象 不合适
+
+        p.__proto__.run = () =>{ //通过对象修改原型 向原型中添加方法
+            console.log("我在跑");
+        }
+        p.__proto__ =new Dog()//为对象赋值一个新的原型
+        console.log(p);
+        console.log(p2);
+        
+        console.log(Person.prototype);//通过类的prototype属性 访问实例的原型
+        
+        //p.run()
+        //p2.run()
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //选择排序
+        const arr = [5, 8, 7, 4, 3, 1, 2, 9, 6]
+
+        for (let i = 0; i < arr.length; i++) {//外层控制轮数
+            for (let j = i + 1; j < arr.length; j++) {//内层进行相邻比较
+                if (arr[i] > arr[j]) {
+                    let temp = arr[i]
+                    arr[i] = arr[j]
+                    arr[j] = temp
+                }
+            }
+        }
+        console.log(arr);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

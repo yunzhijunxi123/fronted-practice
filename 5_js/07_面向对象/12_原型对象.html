@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            JS中继承就是通过原型实现的
+        */
+        class Person{
+            name ="孙悟空"
+            age = 18
+            sayHello(){
+                console.log("Hello 我是",this.name);
+            }
+            // sayHello=()=>{
+            //     console.log("Hello 我是",this.name);
+            // }
+        }
+        class Dog{
+
+        }
+        const p1 = new Person()
+        const p2 = new Person()
+        p1.sayHello="hello"
+        const d1 = new Dog()
+        const d2 = new Dog()
+
+        console.log(p1)
+        console.log(p2)
+        console.log(p1===p2);//false 
+        
+        console.log(p1.__proto__===p2.__proto__);//true 所有同类型对象的 原型对象是同一个
+        console.log(p1.sayHello===p2.sayHello);//true 
+
+        console.log(d1.__proto__===d2.__proto__);
+        
+        class Animal{
+
+        }
+        class Cat extends Animal{
+
+        }
+        const cat = new Cat()
+
+        //cat Animal object Object原型 null
+        console.log(cat.__proto__.__proto__.__proto__.__proto__);
+        
+        /*
+        
+        */
+        //console.log(p1.constructor);
+    
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            使用Object创建对象的问题
+                无法区分出不同类型的对象
+                不方便批量创建对象
+            类是对象模板 大驼峰命名法（每个单词首字母大写）
+        */
+        class Person {
+
+        }
+        class Dog {
+
+        }
+        // const Person = class{
+
+        // }
+        const p1= new Person()//调用构造函数创建对象
+        const p2= new Person()
+
+        const d1= new Dog()
+        const d2= new Dog()
+        console.log(p1 instanceof Person);//检查p1是否是Person
+        console.log(d1 instanceof Person);
+        
+        const five = {
+            name: "王老五",
+            age: "18",
+            height: 180,
+            weight: 55,
+
+            //添加方法
+            sleep() {
+                console.log(this.name + "睡觉了");
+            },
+            eat() {
+                console.log(this.name + "吃饭了");
+            }
+        }
+        const yellow = {
+            name: "大黄",
+            age: "3",
+            run() {
+                console.log(this.name + "跑")
+            }
+        }
+        console.log(five);
+        console.log(yellow);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

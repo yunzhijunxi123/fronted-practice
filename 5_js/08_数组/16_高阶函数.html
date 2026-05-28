@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            高阶函数 参数或返回值是函数 这个函数为高阶函数
+        */
+        //选择排序
+        const arr = [5, 8, 7, 4, 3, 1, 2, 9, 6]
+        const arr2 = [3, 6, 9, 8, 5, 2, 1, 4, 7]
+        function selectArray(array) {
+            const arr = [...array]//浅拷贝给arr
+            for (let i = 0; i < arr.length; i++) {//外层控制轮数 排序的是arr
+                for (let j = i + 1; j < arr.length; j++) {//内层进行相邻比较
+                    if (arr[i] > arr[j]) {
+                        let temp = arr[i]
+                        arr[i] = arr[j]
+                        arr[j] = temp
+                    }
+                }
+            }
+            return arr;
+        }
+        let result = selectArray(arr2)
+        console.log(result);
+
+
+        class Person {
+            constructor(name, age) {
+                this.name = name
+                this.age = age
+            }
+        }
+        const personArr = [new Person("孙悟空", 18),
+        new Person("猪八戒", 28), new Person("红孩儿", 8)]
+        /*
+                过滤更加灵活：
+            一个函数的参数也可以是函数 回调函数      
+        */
+        function filter(arr, cb) {
+            const newArr = []
+            // cb()
+            for (let i = 0; i < arr.length; i++) {
+                if (cb(arr[i])) {
+                    newArr.push(arr[i])
+                }
+            }
+            return newArr
+        }
+        // function fn(a){
+        //     return a.age<18
+        // }
+        let result2 = filter(personArr, a => a.name === "孙悟空")
+        let result3 = filter(personArr, a => a.age >= 18)
+
+        console.log(result2);
+        console.log(result3);
+        const arr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        let result4 = filter(arr3, a => a % 2 == 0)
+        console.log(result4);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // class Person{
+        //     name="孙悟空"//直接指定实例属性的值 所有对象的属性都是这个值
+        //     age=18
+        //     gender="男"
+        //     sayHello(){
+        //         console.log(this.name);
+                
+        //     }
+        // }
+        // const p1 = new Person()
+        // const p2 = new Person()
+        // const p3 = new Person()
+        // p2.name="猪八戒"
+        // console.log(p1);
+        // console.log(p2);
+        // console.log(p3);
+
+        class Person{
+            name
+            age
+            gender
+            //类中添加一个特殊的方法constructor 构造函数 就是为了批量创建并初始化对象
+            //调用类 创建对象时 执行
+            constructor(name,age,gender){
+                //console.log("构造函数执行~",name,age,gender);
+                this.name=name//对象的属性=参数
+                this.age =age
+                this.gender=gender
+            }
+        }
+        const p1 =new Person("孙悟空",17,"男")//相当于调用constructor
+        const p2 =new Person("猪八戒",17,"男")
+        const p3 =new Person("沙和尚",17,"男")
+        console.log(p1);
+        console.log(p2);
+        console.log(p3);
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

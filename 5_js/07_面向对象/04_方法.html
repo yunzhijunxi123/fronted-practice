@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            类是创建对象的模板 创建的第一件事就是定义类
+        */
+        class Person{
+            name = "孙悟空"
+            // sayHello = function(){添加方法
+
+            // }
+            sayHello(){//实例方法
+                console.log("大家好我是"+this.name);
+                
+            }//添加方法
+            static test(){//静态方法 类方法
+                console.log("我是静态方法逗号",this);
+                console.log("我是静态方法加号"+this);//加号是字符串拼接 把对象变成字符串 而类的字符串是它的源代码
+            }
+        }
+        const p1 = new Person()
+        console.log(p1);
+        p1.sayHello()
+        Person.test()
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

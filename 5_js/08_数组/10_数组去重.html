@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //编写代码去除数组中重复的元素
+        const arr = [2,3,4,2,2,3,5,2,3,6]
+        //分别获取数组中的元素
+        for(let i = 0;i<arr.length;i++){
+            for(let j =i+1;j<arr.length;j++){
+                if(arr[j]===arr[i]){//当arr[i]和arr[j]相同时 
+                // 自动删除j位置元素 然后j+1位置的元素 会变成j位置元素
+                //而j位置已经比较过了 不会重复比较 
+                    arr.splice(j,1)//splice() 删除的起始位置 删除的数量
+                    j--//删除一个元素时 将该位置的元素再比较一遍
+                }
+            }          
+        }
+        console.log(arr);
+        
+        
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

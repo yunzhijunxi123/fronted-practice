@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            继承可以在不修改一个类的情况下对其进行扩展
+            程序 对修改关闭 对扩展开放
+        */
+        class Animal {
+            constructor(name) {
+                this.name = name
+            }
+            sayHello() {
+                console.log("动物在叫");
+            }
+        }
+        class Dog extends Animal {
+            //重写 在子类 创建同名方法重写父类的方法
+            sayHello() {
+                console.log("汪汪汪");
+            }
+        }
+        class Cat extends Animal {
+            //重写构造函数
+            constructor(name, age) {
+                //重写构造函数时 必须在第一行代码为super()
+                super(name)
+                this.age = age
+            }
+            sayHello() {
+                //调用父类sayHello
+                super.sayHello()
+                console.log("喵喵喵");
+            }
+        }
+        const dog1 = new Dog("旺财")
+        const cat1 = new Cat("汤姆", 11)
+        dog1.sayHello()
+        cat1.sayHello()
+        console.log(dog1);
+        console.log(cat1);
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

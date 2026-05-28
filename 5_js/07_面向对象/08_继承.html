@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            封装 安全性
+            继承 扩展性
+            多态 灵活性
+        */
+        class Animal{
+            constructor(name){
+                this.name =name
+            }
+            sayHello(){
+                console.log("动物在叫");
+            }
+        }
+        class Dog extends Animal{
+
+        }
+        class Cat extends Animal{
+
+        }
+        const dog1 = new Dog("旺财")
+        const cat1 = new Cat("汤姆")
+        dog1.sayHello()
+    </script>
+</head>
+
+<body> 
+
+</body>
+
+</html>
