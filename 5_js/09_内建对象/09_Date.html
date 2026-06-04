@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Date js中所有和时间相关的数据 由Date对象表示
+
+        */
+        let d = new Date()//d为当前时间
+        d = new Date("10/20/1998 12:22:33")//月/日/年 时:分:秒
+        d = new Date("2019-12-23T23:34:35")
+        console.log(d);
+        d = new Date(2016,0,1,13,45,33)//年 月 日 时 分 秒 毫秒
+        d = new Date()
+        result = d.getFullYear()//获取四位年份
+        result = d.getMonth()//返回当前日期的月份(0-11) 5表示6月
+        result = d.getDate()//返回当前日期是几号
+        result = d.getDay()//当前是星期几（0-6） 0代表星期日
+        result = d.getTime()//返回当前日期对象的时间戳 
+        //从1970年1月1日0时0分0秒到当前日期所经历的毫秒数 计算机底层存储的就是时间戳
+        //Date.now()获取当前时间戳
+        console.log(result);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

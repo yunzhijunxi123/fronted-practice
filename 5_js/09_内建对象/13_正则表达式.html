@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            正则表达式 检查一个字符串是否符合规则
+            也是JS中的一个对象
+        */
+        //接收两个参数 1.正则表达式 2.匹配模式
+        let reg = new RegExp("a", "i")//通过构造函数 创建一个正则表达式的对象
+        // 字面量
+        reg = /a/i
+        console.log(reg);
+        reg = /\w/
+        reg = new RegExp("\\w")
+        console.log(reg);
+
+        reg = new RegExp("a")//检查字符串中是否有a
+        let str = "abc"
+        console.log(reg.test(str));
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

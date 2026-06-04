@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+
+        */
+        const map = new Map()
+
+        // map.set("name", "孙悟空")
+        // map.set("age", 8)
+        // map.set({},"呵呵")
+        //map转换为数组
+        //const arr = Array.from(map)
+        // const arr = [...map]
+        //console.log(arr);
+        
+        const map2 = new Map ([["name","猪八戒"],["age",18],[{},()=>{}]]);
+        
+        console.log(map2);
+        //遍历map
+        for(const entry of map){
+            const [key,value]=entry
+            console.log(entry);
+            console.log(key,value);
+        }
+        map.forEach((key,value,c)=>{
+            console.log(key,value);
+        })
+        /*
+            map.keys() 获取map中所有的key
+            map.values() 获取map中所有的value
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

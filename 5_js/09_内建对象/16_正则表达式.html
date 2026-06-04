@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            量词
+        */
+        let str = "abcaccadcaecafc"
+        let re = /a[a-z]c/i //只会匹配第一个
+        re = /a([a-z])c/ig
+        let result =re.exec(str) //获取字符串中符合axc的内容
+        while (result) {
+            console.log(result[0], result[1], result[2]);
+            result = re.exec(str)
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

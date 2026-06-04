@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            1.函数的嵌套
+            2.内部函数要引用外部函数的嵌套
+            3.内部函数作为返回值返回
+        */
+        // function outer(){
+        //     function inner(){
+
+        //     }
+        //     return inner
+        // }
+        function outer() {
+            let someVariable = "someValue"
+            function inner() {
+                someVariable = "xxxx"
+            }
+            return inner
+        }
+        function outer2() {
+            let num = 0
+            return () => {
+                num++
+                console.log(num);
+            }
+        }
+        let fn1 = outer2()
+        let fn2 = outer2()
+        fn1()
+        fn2()
+        fn1 = null
+        fn2 = null
+        /*
+            生命周期
+            1.在外部函数调用时产生 外部函数每次调用都会产生全新的闭包！！！
+            2.在内部函数丢失时销毁(被垃圾回收)
+            注意
+            用来隐藏不希望被外部访问的内容 占用一定内存空间
+            闭包不能使用原型 类可以使用原型
+            没几个-闭包 大量使用-类
+        */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

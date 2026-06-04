@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            递归
+                -调用自身的函数 递归函数
+                大问题拆分成小问题
+                基线条件 —— 递归的终止条件
+                递归条件 —— 如何对问题进行拆分
+                递归思路简洁 循环执行性能较好
+        */
+        // function fn(){
+        //     fn()
+        // }
+        // fn()
+
+        function cal(n){
+            let result = 1
+            for(let i=1;i<=n;i++){
+                result*=i
+            }
+            return result
+        }
+        let result = cal(5)
+        console.log(result);
+
+         
+        function cal2(n){
+            if(n===1){
+                return 1
+            }else{
+                return n*cal2(n-1)
+            }
+        }
+        let result2 = cal2(5)
+        console.log(result2);
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

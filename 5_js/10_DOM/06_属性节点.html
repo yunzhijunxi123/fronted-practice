@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input disabled="a" class="a" type="text" name="username" value="admin">
+    <script>
+        /*
+            属性节点
+                在DOM也是一个对象
+                1.读取: 元素.属性名 (class属性用className读取) disabled用于禁用
+                        读取布尔值 返回true或false
+                2. 
+        */  
+            //const input = document.getElementsByName("username")[0]
+            input = document.querySelector("[name=username]")
+            console.log(input.getAttribute("type"));//2.读取
+            console.log(input.setAttribute("value","猪八戒"));//2.修改
+            console.log(input.setAttribute("disabled","true"));//写true禁用
+            console.log(input.removeAttribute("value"));//2.删除
+            
+            
+    </script>
+</body>
+
+</html>

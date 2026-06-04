@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Math 是一个工具类
+            常量
+                PI
+            方法
+                Math.pow()求x的y次幂
+
+                Math.floor()//向下取整
+                Math.ceil()//向上取整
+                Math.round()//四舍五入
+                Math.trunc()//直接去除小数
+        */
+        console.log(Math.PI);
+        let result = Math.abs(-10)
+        result = Math.pow(4, 2)//4**2
+        result = Math.sqrt(4)//4**.5
+        result1 = Math.floor(2.9999)//2 向下取整 谁小取谁
+        result2 = Math.ceil(2.0001)//3 向上取整
+        result3 = Math.round(2.4)//2 四舍五入取整
+        result4 = Math.trunc(2.4)//2 直接舍弃小数位
+        
+        console.log(result1);
+        console.log(result2);
+        console.log(result3);
+        console.log(result4);
+        /*
+            生成x到y之间的随机数
+                Math.round(Math.random()*(y-x)+x)
+        */
+        for(let i=0;i<50;i++){
+            result = Math.round(Math.random()*6) //从0到5的随机数
+            console.log(result);
+        }
+        //result = Math.random()//返回0到1之间的伪随机数 包括0(实际没有0？) 不包括1
+        
+        
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

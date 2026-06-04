@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            垃圾回收(Garbage collection)
+            什么是垃圾 一个对象没有任何变量对其进行引用 
+            这个对象就是一个垃圾
+            JS有自动的垃圾回收机制 这些垃圾对象会被解释器自动回收
+            要将不再使用的变量设置为null
+        */
+        let obj = {name:"孙悟空"}
+        let obj2 = obj
+        obj = null
+        obj2 = null
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            split() 
+                根据正则表达式 对一个字符串进行拆分
+            search()
+                搜索符合正则表达式的内容第一次在字符串中的位置
+            replace()
+                根据正则表达式替换字符串中指定的内容
+            match()    
+                根据正则表达式去匹配字符串中符合要求的内容
+            matchAll()
+                匹配字符串中符合要求的内容
+        */
+        let str = "a@b@c@d"
+        let result = str.split("@")
+        str="孙悟空abc猪八戒adc沙和尚"
+        result = str.split(/a[bd]c/)//表示b或d皆可
+        
+        result = str.search("abc")
+        str="abc13575487862dd14785249647dqa18966557744aa"
+        result = str.search(/1[3-9]\d{9}/)
+        result = str.replace(/1[3-9]\d{9}/g,"哈哈哈") //后面加g全局匹配
+        result = str.match(/1[3-9]\d{9}/g)
+        result = str.matchAll(/1[3-9](\d{9})/g) //global
+        // console.log(result);
+        for(let item of result){
+            console.log(item);
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

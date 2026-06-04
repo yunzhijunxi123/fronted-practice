@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+            //字符串的本质就是字符数组
+            //"hello" --> ["h","e","l","l","o"]
+            //字符串的很多方法都和数组很类似
+            
+        let str = "hello"
+        console.log(str[0]);
+        for(let char of str){
+            console.log(char);
+        }
+        console.log(str.at(0));//根据索引获取字符
+        console.log(str.concat());//用来连接两个或多个字符串
+        str="hello hello how are you"
+        console.log(str.includes("hello"));//用来检查字符串中是否包含某个内容
+        //第二个参数表示查询的起始位置
+        str.startsWith("h")//检查是否以h开头
+        str.endsWith("h")//检查是否以h结尾
+        str="100"
+        let result = str.padStart(7,"0")//让字符串保持某个长度
+        console.log(result);
+
+        str="hello hello how are you"
+        let result2 = str.replace("hello","abc")
+        result = str.replaceAll("hello","abc")
+        result = str.slice(12,15)
+        result = str.substring(12,15)//截取字符串
+        console.log(result);
+        str = "abc@bcd@efg"
+        result = str.split("@")//根据@拆分成数组  
+        console.log(result);
+        str = "abcdABCD"
+        console.log(str.toLowerCase());//转小写
+        console.log(str.toUpperCase());//转大写
+        str = "  abc  "
+        console.log(str.trim());//去除字符串前后空格
+        str = "  abc  "
+        console.log(str.trimStart());
+        str = "  abc  "
+        console.log(str.trimEnd());
+        
+                
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <script>
+        /*
+            用DOM操作网页 浏览器至少先给我一个对象
+            document代表整个网页
+        */  
+       document.write()
+       console.log(document);
+       //获取btn对象
+       const btn = document.getElementById("btn")
+       console.log(btn); //打印了一个对象
+       btn.innerText = "Click Me"//修改btn中的文字
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1">
+        我是box1
+        <span class="s1">我是s1</span>
+        <span class="s1">我是s1</span>
+    </div>
+    <span class="s1">我是s1</span>
+
+    <script>
+        /*
+            HTMLDivElement -> HTMLElement -> Element -> Node
+            通过元素节点获取其他节点的方法
+        */
+        const box1 = document.getElementById("box1")
+        const spans = box1.getElementsByTagName("span")
+        const cns = box1.childNodes//获取当前元素的子节点
+        console.log(cns.length); //5个 包含空白的
+        const children = box1.children
+        console.log(children);//获取当前元素的子元素
+        /*
+            element.firstElementChildren        
+            element.lastElementChildren        
+            element.nextElementSibling        
+            element.previousElementSibling        
+            element.parentNode
+            element.tagName 
+        */
+
+    </script>
+</body>
+
+</html>

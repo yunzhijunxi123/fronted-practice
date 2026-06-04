@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            Map
+                存储键值对结构的数据(key-value)
+                Object存储的数据 一种键值对结构
+                Map和Object区别:
+                    Object属性名只能是字符串或符号 主要用
+                    传递其他类型属性名
+                    JS解释器自动转换其为字符串
+
+                    Map任何类型的值均可成为数据的Key(最大优势)
+                    map.delete(key)
+                    map.has(key) 检查map中是否包含指定键
+                    map.clear() 删除全部键值对
+        */
+        const obj2 = {}
+        const obj = {
+            name: "孙悟空",
+            age: 18,
+            [Symbol()]: "哈哈",
+            [obj2]: "嘻嘻"
+        }
+        console.log(obj);
+
+        const map = new Map()//创建
+        map.set("name","孙悟空")//set(key,value)
+        map.set(obj2,"呵呵")
+        map.set(NaN,"哈哈哈")
+        console.log(map);
+        console.log(map.get("name"));//存哪个 取哪个
+        console.log(map.get(NaN));
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

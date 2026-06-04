@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //let re = /a/ //检查字符串中是否有a
+        //let re = /a|b/ //检查字符串中是否有a或b
+        //let re = /[ab]/ //[]表示字符集(或)
+        // let re = /[a-z]/ //任意小写字母
+        let re = /[a-zA-Z]/ //任意字母
+        re = /[a-zA-Z]/ //任意字母
+        re = /[a-z]/i //匹配模式i表示忽略大小写
+        re = /[^a-z]/ //匹配 包含小写字母以外的内容
+
+        re = /./ //.表示除了换行外的任意字符
+        re = /\./ //表示只匹配. 其他不匹配
+        /*
+            其他的字符串
+                \w 任意的单词字符
+                \W 除了单词字符
+                \d 任意数字
+                \D 除了数字
+                \s 空格
+                \S 除了空格  
+                \b 单词边界
+                \B 除了单词边界
+
+                ^表示字符串开头
+                $表示字符串结尾
+        */
+        re = /^a/
+        re = /a$/
+        re = /^abc$/ //与abc完全一致
+        let result = re.test('fa')
+        console.log(result);
+        
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

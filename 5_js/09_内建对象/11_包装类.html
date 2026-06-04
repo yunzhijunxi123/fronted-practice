@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            JS中 除了直接创建原始值外 还可创建原始值的对象
+            new String()
+            new Number()
+            new Boolean()
+            JS 5个包装类 把一个原始值包装成对象!!!
+            String Number Boolean BigInt Symbol
+            对原始值调用方法或属性时
+            JS解释器会临时将原始值包装为对应的对象
+            然后调用该对象的方法或属性
+            对象中的方法都可以直接通过原始值来调用
+        */
+        // let str = new String("hello")
+        // let num = new Number(10)
+        // let bool = new Boolean(true)
+        // let bool2 = new Boolean(true)
+        // alert(bool)
+        // alert(bool2)
+        // console.log(bool===bool2);//false bool1 bool2是两个对象
+        let str ="hello"
+        str.name = "哈哈"
+        let num = 11
+        num = num.toString()
+        //console.log(str.name);//undefined
+        console.log(num);
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

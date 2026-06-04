@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            网页自上而下加载 js代码若编写到网页的上面
+            js执行时 网页还没执行完毕 无法获取DOM对象
+
+            解决办法：
+                1. 将script标签编写到body的最后 优先级最高
+                2.将代码编写到window.onload的回调函数中
+                在窗口的内容加载完毕之后触发 晚一点
+                3.将代码编写到document对象的DOMContentLoaded的回调函数中
+                在当前文档加载完毕之后触发 执行时机更早
+                4.将代码编写到外部的js文件中，以defer的形式引入 更更早
+        */
+        // window.onload = function () {
+        //     const btn = document.getElementById("btn")
+        //     console.log(btn);
+        // }
+        //  window.addEventListener("load",function(){
+        //      const btn = document.getElementById("btn")
+        //      alert(btn)
+        //      console.log(btn);
+        //  })
+        //  document.addEventListener("DOMContentLoaded",function(){
+        //      const btn = document.getElementById("btn")
+        //      alert(btn)
+        //      console.log(btn);
+        //  })
+    </script>
+    <!-- 加入defer延迟 -->
+    <script defer src="./script.js"></script>
+</head>
+
+<body>
+    <button id="btn">点我一下</button>
+    <iframe src="https://www.lilichao.com" frameborder="0">
+
+    </iframe>
+
+</body>
+
+</html>

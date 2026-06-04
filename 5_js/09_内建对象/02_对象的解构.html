@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const obj = {name:"孙悟空",age:18,gender:"男"}
+        let {name,age,gender} = obj//数组中括号 对象大括号
+        /*
+            let name,age,gender
+            {name,age,gender} = obj
+        */
+        let {address} = obj
+        let {name:a,age:b,gender:c,add="花果山"} =obj
+        console.log(a,b,c,add);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

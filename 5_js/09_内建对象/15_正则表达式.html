@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            量词
+        */
+        let re = /a{3}/ //要有3个a 4个也是true
+        re = /^a{3}$/ //刚好3个a才行
+        re=/^{ab}{3}$/ //刚好3个ab才行
+        re=/^{a-z}{1,3}$/ //1到3个字母都行
+        re = /^ba+$/ //+ 一个以上ba
+        re = /^ba*$/ //* 任意数量ba
+        re = /^ba?$/ // 0到1次ba
+        let result = re.test("ba")
+        console.log(result);
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            对象的序列化
+                JS的对象使用时 都存在于计算机的内存中
+                JS对象的序列化 将一个对象转换为字符串
+                将字符串在不同的语言之间进行传递
+                对字符串进行读写操作 
+                让JS对象在不同的语言之间传递
+
+                如何进行序列化
+                    JS中有一个工具类 JSON(JavaScript Object Notation)
+                    JS对象序列化后会转换字符串
+                用途
+                    1.作为数据交换的格式
+                    2.用来编写配置文字
+                    
+                注意
+                    1.手动编写JSON字符串
+                        JSON 对象 
+                        JSON 数组
+                    2.JSON字符串的属性名必须用双引号
+                    3.数字，字符串，布尔值，空值，对象，数组
+                    4.JSON格式和JS对象的格式基本一致
+                    JSON字符串 属性是最后一个 不要再加逗号
+        */
+        const obj = {
+            name:"孙悟空",
+            age:18
+        }
+        const str = JSON.stringify(obj)//JSON.stringify() 对象转字符串
+        const obj2 = JSON.parse(str)//JSON.parse() JSON格式字符串转换为JS对象
+        console.log(obj);//对象
+        console.log(str);//字符串
+        console.log(obj2);
+        console.log(obj===obj2);//false 深拷贝的版本
+        const str2 = '{"name":"猪八戒","age":25}'
+        console.log(str2);
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

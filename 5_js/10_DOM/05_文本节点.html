@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box1"> 
+        <span style="text-transform: uppercase;">我是div</span>
+    </div>
+    <script>
+        /*
+            DOM中 网页中所有文本内容都是文本节点对象
+        */
+        const box1 = document.getElementById("box1")
+        // const text = box1.firstChild 通过元素获取文本节点对象
+        // console.log(text);
+        console.log(box1.textContent);
+        //1.获取或修改元素中的文本内容 获取标签中的内容 不考虑css样式
+        console.log(box1.innerText);
+        //2.有标签对标签进行转义 会考虑css样式 display none 就真没了
+        //会触发网页的重排
+        console.log(box1.innerHTML);
+        //3. 直接向元素中添加html代码 有被xss注入的风险
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            一对兔子出生后的两个月后每个月都能生一对小兔子
+            编写一个函数，可以用来计算第n个月的兔子的数量
+        */
+        
+        function cal(num){
+            if(num===1||num===2){
+                return 1
+            }else{
+                return cal(num-1)+cal(num-2)
+            }
+        }
+        let result = cal(10)
+        console.log(result);
+     
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

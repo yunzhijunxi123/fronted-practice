@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*
+            闭包 利用函数 隐藏不希望被外部访问到的变量
+        */
+        // let num = 0//开发中尽量不要定义全局变量
+        // function fn(){
+        //     num++
+        //     console.log(num);
+        // }
+        // fn()
+
+        /*function outer() {
+            let num = 0
+            return () => {//匿名函数
+                num++
+                console.log(num);
+            }
+        }
+        const newFn = outer()
+        console.log(newFn);
+        newFn()//实际执行的是outer()内部返回的箭头函数*/
+
+
+        /*
+            1.函数的嵌套
+            2.内部函数要引用外部函数的嵌套
+            3.内部函数作为返回值返回
+        */
+        function outer(){//闭包 能访问到外部函数作用域中变量的函数
+            let num = 0//位于函数作用域中 里面能看到外边 外边看不到里面
+            return ()=>{
+                num++;
+                console.log(num);
+            }
+        }
+        let newFn = outer()
+        console.log(newFn);
+        num = 1000//改不了
+        newFn()
+        newFn()
+        newFn()
+        
+        
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
