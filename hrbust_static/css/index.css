@@ -162,14 +162,31 @@ li.current{
     opacity: 1;
 }
 .banner .prev-next{
+    position: absolute;
+}
+.banner .prev-next .pic{
+    position: absolute;
     width: 39px;
     height: 64px;
-    font-weight: 700;
-    color: #FFF;
-    opacity: 0.6;
-    z-index: ;
+    background-size: 80% auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+    opacity: 0.7;
+    z-index: 0;
+    margin-top: 193px;
+    display: block;
 }
-
+.banner:hover .prev-next .pic{
+    z-index: 2;
+}
+.banner .prev-next #bannerPrev{
+    background-image: url("../images/10023.png");
+}
+.banner .prev-next #bannerNext{
+    margin-left: 1061px;
+    background-image: url("../images/10024.png");
+}
 /* #endregion主图片 */
 /* #region楼层1 */
 .floor1{
