@@ -1,4 +1,4 @@
-.container{
+﻿.container{
     width: 1100px;
     margin: 0 auto;
 }
@@ -151,6 +151,7 @@
     top: 0;
     left: 0;
     opacity: 0;
+    transition: opacity 1.5s ease-in-out;
 }
 .banner img{
     width: 1100px;
@@ -161,30 +162,45 @@ li.current{
     z-index: 1;
     opacity: 1;
 }
+.banner .container{
+    position: relative;
+}
 .banner .prev-next{
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
 }
 .banner .prev-next .pic{
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     width: 39px;
     height: 64px;
     background-size: 80% auto;
     background-position: center;
     background-repeat: no-repeat;
     background-color: black;
-    opacity: 0.7;
+    border-radius: 6px;
+    opacity: 0.6;
     z-index: 0;
-    margin-top: 193px;
     display: block;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: opacity 0.3s;
 }
-.banner:hover .prev-next .pic{
+.banner:hover .prev-next{
     z-index: 2;
+    
 }
 .banner .prev-next #bannerPrev{
+    left: 0;
     background-image: url("../images/10023.png");
 }
 .banner .prev-next #bannerNext{
-    margin-left: 1061px;
+    right: 0;
     background-image: url("../images/10024.png");
 }
 /* #endregion主图片 */

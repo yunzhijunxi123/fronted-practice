@@ -1,4 +1,4 @@
-/*自动切换图片*/
+﻿/*自动切换图片*/
 //利用闭包 只有toggleChange能访问timer
 //创建匿名函数 让函数作为返回值返回 定义变量引用他
 const toggleChange = (function () {
@@ -19,12 +19,12 @@ const toggleChange = (function () {
 })();
 
 toggleChange(); //默认进入
-const outer = document.getElementsByClassName("banner")[0];
-outer.onmouseenter = () => {
+const banner = document.getElementsByClassName("banner")[0];
+banner.onmouseenter = () => {
   //鼠标进入则关闭
   toggleChange();
 };
-outer.onmouseleave = () => {
+banner.onmouseleave = () => {
   //鼠标离开则开启
   toggleChange();
 };
@@ -59,7 +59,7 @@ function changeImg(dir) {
   } else if (dir === "prev") {
     next =
       current.previousElementSibling ||
-      document.querySelector(".banner li:last-child");
+      document.querySelector(".banner li:last-of-type");
     //下一个或最后一个
   }
   current.classList.remove("current");
