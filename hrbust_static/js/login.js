@@ -10,18 +10,8 @@
   // 仓库取出  →  null 或 "JSON字符串"  →  转成 JS 数组  →  赋值给 usersDB
   var usersDB = JSON.parse(localStorage.getItem("hrbust_users") || "[]");
 
-  // 预置一个测试账号
-  // if (usersDB.length === 0) {
-  //   usersDB.push({
-  //     username: "admin",
-  //     password: "123456",
-  //     registeredAt: new Date().toISOString(),
-  //   });
-  //   saveUsers();
-  // }
-
   function saveUsers() {
-    localStorage.setItem("hrbust_users", JSON.stringify(usersDB));
+    localStorage.setItem("hrbust_users", JSON.stringify(usersDB));//键名 键值
   }
 
   // ========== DOM 元素 ==========
@@ -48,7 +38,7 @@
     loginForm.classList.remove("active");
     clearMessages();
   });
-
+  // 每次切换面板时，清除所有提示
   function clearMessages() {
     loginMsg.textContent = "";
     loginMsg.className = "msg";
@@ -58,9 +48,9 @@
 
   // ========== 注册逻辑 ==========
   regForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault();//阻止浏览器默认的页面刷新/跳转行为
 
-    var username = document.getElementById("regUsername").value.trim();
+    var username = document.getElementById("regUsername").value.trim();//去除首尾空格
     var password = document.getElementById("regPassword").value;
     var confirm = document.getElementById("regConfirm").value;
 
@@ -87,6 +77,7 @@
     }
 
     // 检查用户名是否已存在
+    //Array.prototype.some() 数组中是否至少有一个元素满足条件
     var exists = usersDB.some(function (u) {
       return u.username === username;
     });
@@ -110,6 +101,8 @@
     console.log("密码:     " + newUser.password);
     console.log("注册时间: " + newUser.registeredAt);
     console.log("当前用户总数: " + usersDB.length);
+    //console.log(usersDB);
+    
     console.log("=================================");
 
     showMsg(regMsg, "注册成功！请切换到登录", "success");
@@ -123,9 +116,9 @@
 
   // ========== 登录逻辑 ==========
   loginForm.addEventListener("submit", function (e) {
-    e.preventDefault();
+    e.preventDefault();//阻止浏览器默认的页面刷新/跳转行为
 
-    var username = document.getElementById("loginUsername").value.trim();
+    var username = document.getElementById("loginUsername").value.trim();//去除首尾空格
     var password = document.getElementById("loginPassword").value;
 
     if (!username) {
@@ -174,7 +167,7 @@
 
   // ========== 辅助函数 ==========
   function showMsg(el, text, type) {
-    el.textContent = text;
-    el.className = "msg " + type;
+    el.textContent = text;// 修改元素的文字内容
+    el.className = "msg " + type;//// 修改元素的class属性
   }
 })();
