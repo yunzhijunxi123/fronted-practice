@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">点我一下</button>
+    <hr />
+    <ul id="list">
+      <!-- 执行js代码 -->
+      <li><a href="javascript:;">链接一</a></li>
+      <li><a href="javascript:;">链接二</a></li>
+      <li><a href="javascript:;">链接三</a></li>
+      <li><a href="javascript:;">链接四</a></li>
+    </ul>
+    <script>
+      /*
+        绑定一次事件 让所有超链接 都具有这些事件
+      */
+      //const links = document.querySelectorAll("ul a"); //选择所有ul元素内部的a元素
+      const list = document.getElementById("list");
+      const btn = document.getElementById("btn")
+      //获取list中所有链接
+      const links = list.getElementsByTagName("a")
+
+      //下面此处就是委派
+      document.addEventListener("click",(event)=>{//绑定给document每个超链接都有该事件
+        //检查event.target是否在links中存在
+        //console.log(Array.from(links)); //Array.from(links)和[...links]均可
+        if([...links].includes(event.target)){//判断点击的是否在...links中
+          alert(event.target.textContent);
+        }
+      })
+
+      // btn.addEventListener("click",function(event){//取消事件的传导
+      //   event.stopPropagation()
+      // })
+      
+      // for (let i = 0; i < links.length; i++) {
+      //   links[i].addEventListener("click", function (event) {
+      //     event.preventDefault();
+      //     alert(event.target.textContent); //event.target即被点击的元素
+      //   });
+      // }
+      //点击按钮后 在ul中添加li
+      btn.addEventListener("click", () => {
+        list.insertAdjacentHTML(
+          "beforeend",
+          "<li><a href='javascript:;'>新超链接</a></li>",
+        );
+      });
+    </script>
+  </body>
+</html>

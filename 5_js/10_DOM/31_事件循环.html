@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">点我一下</button>
+    <h1 id="num"></h1>
+    <script>
+      /*
+        event loop 事件循环
+        函数在执行时 产生一个执行环境
+        执行环境负责存储函数执行时产生的一切数据，存储到调用栈的位置 
+        栈 后进先出
+        调用栈(call stack) 调用栈负责存储函数的执行环境
+          一个函数被调用时 执行环境作为一个栈帧
+          插入到调用栈的栈顶 函数执行完毕后自动从栈中弹出
+          最上面的是当前正在执行的代码
+      */
+      function fn() {
+        let a = 10;
+        let b = 20;
+        function fn2(){
+          console.log("fn");
+        }
+        fn2()
+        console.log("fn~");
+      }
+      fn();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <script>
+      /*
+        定时器的本质 指定时间后 将函数添加到消息队列中
+        0秒: 开始计时，注册3秒后要执行的函数
+        3秒: 定时器到期，但主线程还在while循环中
+              → 回调函数被放入消息队列等待
+        6秒: while循环结束，主线程空闲
+        6秒: 从消息队列中取出回调函数执行
+              → 此时console.timeEnd()显示约6秒
+      */
+      // console.time()//开始一个计时器
+      // setTimeout(function(){
+      //   console.timeEnd()//停止计时器 显示从开始到结束的时间
+      //   console.log("定时器执行了");
+      // },3000)
+      // //使程序卡6s
+      // const begin = Date.now()
+      // while(Date.now() - begin < 6000){
+      // }
+      /*
+        setInterval()每间隔一段时间将函数添加到消息队列中
+        如果函数执行速度比较慢 无法确保每次执行的间隔
+      */
+      // console.time("间隔")
+      // setInterval(function(){ //反复执行
+      //   console.timeEnd()
+      //   console.log("定时器执行了");
+      //   alert("定时器执行了")
+      //   console.time()
+      // },3000)
+      // setTimeout(function fn(){ //指定的延迟时间后执行一次回调函数
+      //   console.timeEnd("间隔")
+      //   alert("哈哈")
+
+      //   console.time("间隔")
+      //   //console.log("函数执行");
+      //   setTimeout(fn,3000)//递归 每次函数执行间隔确定
+      // },3000)
+      setTimeout(()=>{
+        console.log("111111");//队列
+      },0)
+      console.log("222222");//栈
+      
+    </script>
+  </body>
+</html>

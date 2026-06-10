@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <h1 id="num"></h1>
+    <script>
+      /*
+        通过定时器 让代码在指定时间后执行
+          setTimeout()
+           1.回调函数
+           2.间隔的时间
+          关闭计时器
+            clearTimeout()
+      */
+      // const timer = setTimeout(()=>{
+      //   alert("我是定时器中的代码")
+      // },3000)
+      // clearTimeout(timer)
+      const numH1 =document.getElementById("num")
+      let number = 0
+      const timer = setInterval(()=>{//会反复执行
+        number++;
+        numH1.textContent = number
+        if(number === 200){
+          clearInterval(timer)
+        }
+      },100)
+      //clearInterval(timer)
+    </script>
+</body>
+</html>

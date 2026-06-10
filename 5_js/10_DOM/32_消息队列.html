@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="btn">点我一下</button>
+    <button id="btn2">点我一下2</button>
+    <h1 id="num"></h1>
+    <script>
+      /*
+        event loop 事件循环
+        函数在执行时 产生一个执行环境
+        执行环境负责存储函数执行时产生的一切数据，存储到调用栈的位置 
+        栈 后进先出
+        调用栈(call stack)  正在执行的
+        调用栈负责存储函数的执行环境
+          一个函数被调用时 执行环境作为一个栈帧
+          插入到调用栈的栈顶 函数执行完毕后自动从栈中弹出
+          最上面的是当前正在执行的最新的代码
+          
+        消息队列    即将执行的  
+        存储将要执行的函数
+         触发一个事件时 响应函数不是直接添加到调用栈中
+         调用栈可能存在一些还没执行完的代码
+        事件触发后 JS引擎将事件响应函数插入到消息队列中排队
+
+
+      */
+      function fn() {
+        let a = 10;
+        let b = 20;
+        function fn2(){
+          console.log("fn");
+        }
+        fn2()
+        console.log("fn~");
+      }
+      fn();
+      console.log("1111");
+      const btn = document.getElementById("btn")
+      const btn2 = document.getElementById("btn2")
+      btn.onclick = function(){
+        alert("1111111")
+        const begin = Date.now()
+        while(Date.now()-begin<3000){//3秒的时间一直占用在调用栈
+
+        }
+      }
+      btn2.onclick = function(){
+        alert("22222222")
+      }
+      
+    </script>
+  </body>
+</html>

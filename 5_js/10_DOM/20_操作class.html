@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            /* !important 最高优先级 */
+            background-color: #bfa;
+        }
+        .box2{
+            width: 300px;
+            height: 500px;
+        }
+        .box3{
+            border: 10px solid red;
+        }
+        .box4{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我一下</button>
+    <hr/>
+    <div class="box1 box3 box4"></div>
+    <script>
+        /*
+            点击按钮后 修改box1的宽度 
+        */
+       const btn = document.getElementById("btn")
+       const box1 = document.querySelector(".box1")//查找类为.box1的元素
+       btn.onclick = function(){
+        //1.一次性修改多个样式
+        //2.对JS和CSS进行解耦
+        //box1.className += " box2"
+        //box1.classList.add("box2","box3","box4")
+        //box1.classList.remove("box2")
+        //box1.classList.toggle("box2")//切换，有就删了 没有就加上
+        //box1.classList.replace("box1","box2") //前面旧的 后面新的
+        let result = box1.classList.contains("box3")//检查这当中有无box3
+        console.log(result);
+       }
+    </script>
+</body>
+</html>
