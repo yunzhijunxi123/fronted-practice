@@ -2,22 +2,25 @@
 //利用闭包 只有toggleChange能访问timer
 //创建匿名函数 让函数作为返回值返回 定义变量引用他
 
-// const dots = Array.from(document.querySelectorAll(".dot a"));
-// document.addEventListener("click", (event) => {
-//   const index = dots.indexOf(event.target);
-//   if (index != -1) {
-//     //切换图片
-//     const current = document.querySelector(".img-list .current");
-//     //取得要切换的图片
-//     const next = document.querySelectorAll(".img-list li")[index];
-//     current.classList.remove("current");
-//     next.classList.add("current");
-//     //切换active
-//     const dotCurrent = document.querySelector(".dot .active");
-//     dotCurrent.classList.remove("active");
-//     event.target.classList.add("active");
-//   }
-// });
+const dots = Array.from(document.querySelectorAll(".dots li"));
+document.addEventListener("click", (event) => {
+  const index = dots.indexOf(event.target);
+  if (index != -1) {
+    //切换图片
+    const current = document.querySelector(".floor1 .current");
+    //取得要切换的图片
+    const next = document.querySelectorAll(".img-list li")[index];
+    current.classList.remove("current");
+    next.classList.add("current");
+    //切换active
+    const dotCurrent = document.querySelector(".dots .active");
+    dotCurrent.classList.remove("active");
+    event.target.classList.add("active");
+    const fontCurrent = document.querySelector(".fonts .active");
+    fontCurrent.classList.remove("active");
+    document.querySelectorAll(".fonts li")[index].classList.add("active")
+  }
+});
 
 const toggleFloor1Change = (function () {
   let timer = null;
