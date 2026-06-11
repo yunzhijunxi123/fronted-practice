@@ -1,14 +1,14 @@
-﻿/*自动切换图片*/
+/*自动切换图片*/
 //利用闭包 只有toggleChange能访问timer
 //创建匿名函数 让函数作为返回值返回 定义变量引用他
-const toggleChange = (function () {
+const toggleFloor1Change = (function () {
   let timer = null;
   return () => {
     //第一次开启 第二次关闭
     //判断timer是否是null
     if (timer === null) {
       timer = setTimeout(function auto() {
-        changeImg("next");
+        changeFloor1Img("next");
         timer = setTimeout(auto, 3000);
       }, 3000);
     } else {
@@ -18,52 +18,50 @@ const toggleChange = (function () {
   };
 })();
 
-toggleChange(); //默认进入
+toggleFloor1Change();//默认进入
+const floor1 = document.getElementsByClassName("floor1-left-bottom-left ")
 
-
-const banner = document.getElementsByClassName("banner")[0];
-
-banner.onmouseenter = () => {
+floor1.onmouseenter = () => {
   //鼠标进入则关闭
-  toggleChange();
+  toggleFloor1Change();
 };
-banner.onmouseleave = () => {
+floor1.onmouseleave = () => {
   //鼠标离开则开启
-  toggleChange();
+  toggleFloor1Change();
 };
 
-const prev = document.getElementById("bannerPrev");
-const next = document.getElementById("bannerNext");
+
+const floor1Prev = document.getElementById("floor1Prev")
+const floor1Next = document.getElementById("floor1Next")
 
 
-prev.onclick = () => {
-  changeImg("prev");
+floor1Prev.onclick = () => {
+  changeFloor1Img("prev");
 };
 
-next.onclick = () => {
-  changeImg("next");
+floor1Next.onclick = () => {
+  changeFloor1Img("next");
 };
 /*
             changeImg 用来切换图片
                 dir 切换图片的方向  next   prev
 */
 
-function changeImg(dir) {
-  const current = document.querySelector(".banner .current");
+function changeFloor1Img(dir) {
+  const current = document.querySelector(".floor1 .current");
   //获取下一张图片
   let next;
   if (dir === "next") {
     next =
       current.nextElementSibling ||
-      document.querySelector(".banner li:first-child");
+      document.querySelector(".floor1 li:first-child");
     // current 的下一个兄弟元素，如果已经是最后一个，就返回第一个元素
   } else if (dir === "prev") {
     next =
       current.previousElementSibling ||
-      document.querySelector(".banner li:last-of-type");
+      document.querySelector(".floor1 li:last-of-type");
     //下一个或最后一个
   }
   current.classList.remove("current");
   next.classList.add("current");
 }
-
