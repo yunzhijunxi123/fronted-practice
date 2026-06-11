@@ -351,8 +351,33 @@ li.current{
 .floor1-left-bottom .floor1-left-bottom-left .floor1-left-bottom-left-bottom{
     height: 35px;
     background-color: #F1F1F1;
+    
 }
 
+.floor1-left-bottom-left-bottom li{
+    text-align: center;
+    line-height: 35px;
+    font-size: 16px;
+    display: none;
+}
+.floor1-left-bottom-left-bottom li a{
+    color: #105FA5;;
+}
+.floor1-left-bottom-left-bottom li a:hover{
+    color: #E5E5E5;
+    transition: 0.8s;
+}
+
+.floor1-left-bottom-left-bottom .first{
+    font-weight: 700;
+    display: none;
+}
+ 
+/* <a> 标签有自己的默认颜色，不会继承父元素的颜色。 */
+
+.floor1-left-bottom-left-bottom .active{
+    display: block;
+}
 
 
 
