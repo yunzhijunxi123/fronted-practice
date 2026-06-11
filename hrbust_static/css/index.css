@@ -253,7 +253,7 @@ li.current{
 .floor1-left-bottom .floor1-left-bottom-left{
     width: 350px;
     height: 274px;
-    background-color: green;
+    /* background-color: green; */
     margin-right: 28px;
     margin-bottom: 33px;
 }
@@ -261,7 +261,7 @@ li.current{
     position: relative;
     overflow: hidden;
     height: 239px;
-    background-color: orange;
+    /* background-color: orange; */
 }
 .floor1-left-bottom .floor1-left-bottom-left .floor1-left-bottom-left-top ul{
 
