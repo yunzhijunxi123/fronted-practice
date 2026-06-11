@@ -155,6 +155,7 @@
       setTimeout(function () {
         window.location.href = "index.html";
       }, 800);
+      
     } else {
       console.log("========== 登录失败 ==========");
       console.log("尝试账号: " + username);

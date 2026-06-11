@@ -1,4 +1,4 @@
-/*自动切换图片*/
+﻿/*自动切换图片*/
 //利用闭包 只有toggleChange能访问timer
 //创建匿名函数 让函数作为返回值返回 定义变量引用他
 const toggleFloor1Change = (function () {
@@ -19,7 +19,7 @@ const toggleFloor1Change = (function () {
 })();
 
 toggleFloor1Change();//默认进入
-const floor1 = document.getElementsByClassName("floor1-left-bottom-left ")
+const floor1 = document.getElementsByClassName("floor1-left-bottom-left")
 
 floor1.onmouseenter = () => {
   //鼠标进入则关闭
