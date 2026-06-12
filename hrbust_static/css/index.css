@@ -344,10 +344,6 @@ li.current{
 .floor1 .floor1-left-bottom-left .dots .active{
     background-color: #146CC1
 }
-
-
-
-
 .floor1-left-bottom .floor1-left-bottom-left .floor1-left-bottom-left-bottom{
     height: 35px;
     background-color: #F1F1F1;
@@ -378,9 +374,6 @@ li.current{
 .floor1-left-bottom-left-bottom .active{
     display: block;
 }
-
-
-
 .floor1-left-bottom .floor1-left-bottom-right{
     width: 340px;
     height: 300px;
@@ -557,8 +550,68 @@ li.current{
     height: 232px;
     margin-top: 28px;
     margin-bottom: 25px;
-    background-color: transparent;
+    /*裁剪超出的部分 只显示可视区域*/
+    overflow: hidden;
+}
+.floor3 .floor3-bottom .marquee-track{
+    display: flex;
+    /*宽度为所有子元素加起来的总宽度，绝不换行，多宽都给*/
+    width: max-content;
+    /*flex自动在每两个相邻子元素之间插入37px*/
+    gap: 37px;
+    /*滚动一轮的时长（可调快慢）*/
+    animation: marqueeScroll 60s linear infinite;
+}   
+.floor3 .floor3-bottom .content{
+    width: 250px;
+    height: 220px;
+    flex-shrink: 0;/*防止被flex压缩变形*/
+}
+.floor3 .floor3-bottom .content .top{
+    height: 180px;
+    background-color: beige;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.floor3 .floor3-bottom .content .bottom{
+    height: 40px;
+    line-height: 40px;
+    text-align: left;
+    font-size: 15px;
+}
+.floor3 .floor3-bottom .content .bottom a{
+    color: #3B3B3B;
+}
+.floor3 .floor3-bottom .content .bottom a:hover{
+    color: #0E5EA4;
+}
 
+.floor3 .floor3-bottom .content1 .top{
+    background-image: url('../images/10011.png');
+}
+
+.floor3 .floor3-bottom .content2 .top{
+    background-image: url('../images/10012.png');
+}
+
+.floor3 .floor3-bottom .content3 .top{
+    background-image: url('../images/10013.png');
+}
+
+.floor3 .floor3-bottom .content4 .top{
+    background-image: url('../images/10014.jpg');
+}
+@keyframes marqueeScroll{
+    0%{
+        transform: translateX(0);/*起始位置：不偏移*/
+    }
+    100%{
+        transform: translateX(-1148px);/*4(250+37)*/
+    }
+}
+.floor3 .floor3-bottom:hover .marquee-track{
+    animation-play-state: paused;
 }
 /* #endregion楼层3 */
 /* #region楼层4 */
