@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            study(){
+            //study是放在哪里的？ 类的原型对象上 供实例使用
+            //通过Person实例调用study study中的this是谁  Person实例
+                console.log(this);
+            }
+        }
+        const p1 = new Person('tom',18)
+        p1.study()//通过实例调用study方法
+        const x = p1.study
+        x()
+
+    </script>
+</body>
+</html>

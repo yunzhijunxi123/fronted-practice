@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="test"></div>
+    <!-- 引入react核心库 -->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM -->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+
+    <script type="text/babel">
+        //1.创建组件
+        class Weather extends React.Component{
+            /*
+                注意
+                    1.组件中的render方法中的this为组件实例对象
+                    2.组件自定义的方法中的this为undefined
+                        (1)强制绑定this 通过函数对象的bind()
+                        (2)箭头函数
+                    3.状态数据 不能直接修改或更新
+            */
+            //初始化状态
+            state = {isHot:false,wind:'微风'}             
+            render(){ 
+                const {isHot,wind} = this.state
+                return <h1 onClick={this.changeWeather}>今天天气很{isHot?'炎热':'凉爽'},{wind}</h1>
+            }
+            /*
+                箭头函数没有自己的this 如果使用了this关键字
+                找外层函数的this作为自己的this去使用
+            */
+            //自定义方法 要用赋值语句的形式+箭头函数
+            changeWeather = ()=>{//changeWeather自然放在实例对象自身
+                const isHot = this.state.isHot
+                this.setState({isHot:!isHot})
+                console.log(this);
+                
+            }
+        }
+
+        /*2.渲染组件到页面*/
+        ReactDOM.render(<Weather/>,document.getElementById('test'))
+
+    </script>
+</body> 
+</html>

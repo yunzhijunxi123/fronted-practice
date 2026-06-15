@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+    <!-- 引入react核心库 全局多了React-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM  全局多了ReactDOM-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入prop-types 用于对组件标签属性进行限制 全局多了PropTypes-->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+
+    <script type="text/babel">
+      /*
+          props理解： 
+            1.每个组件对象都有props属性
+            2.组件标签的所有属性都保存在props中
+          props作用：
+            1.通过标签属性从组件外向组件内传递变化的数据
+            2.组件内部不要修改props数据(只读)
+      */
+      //1.创建组件
+      class Person extends React.Component {
+
+        constructor(props){
+            //构造器是否接收props 是否传递给super
+            //取决于 是否希望在构造器中通过this访问props
+            console.log(props);
+            super(props)
+            console.log('constructor',props);
+
+        }
+        // state = {name:'tom',age:18,sex:'女'}
+        render() {
+          //console.log(this);
+          const { name, age, gender } = this.props;
+          return (
+            <ul>
+              <li>姓名：{name}</li>
+              <li>年龄：{age + 1}</li>
+              <li>性别： {gender}</li>
+            </ul>
+          );
+        }
+        //对标签属性进行类型与必要性的限制
+        static propTypes = {//static 给类本身加 而不是给类的实例对象加
+          name: PropTypes.string.isRequired,
+          gender: PropTypes.string,
+          age: PropTypes.number,
+        };
+        //指定默认标签属性值
+        static defaultProps = { 
+          gender: "未知",
+          age: 18,
+        };
+      }
+      // 2.渲染组件到页面
+      ReactDOM.render(<Person name = "jerry"/>, document.getElementById("test3"));
+
+    </script>
+  </body>
+</html>
