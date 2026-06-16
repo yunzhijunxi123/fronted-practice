@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+    <!-- 引入react核心库 全局多了React-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM  全局多了ReactDOM-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入prop-types 用于对组件标签属性进行限制 全局多了PropTypes-->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+
+    <script type="text/babel">
+      class Demo extends React.Component {
+        /*
+          React.createRef调用后返回容器 该容器可存储被ref所标识的节点
+          该容器 专人专用
+        */
+        myRef = React.createRef()
+        myRef2 = React.createRef()
+        showData = () => {
+          alert(this.myRef.current.value);
+          // const { input1 } = this; //解构赋值
+          // alert(input1.value);
+        };
+        showData2 = () => {
+          alert(this.myRef2.current.value);
+          //console.log(this.refs.input1);
+          // const { input2 } = this; //解构赋值
+          // alert(input2.value);
+        };
+        render() {
+          /*
+            回调函数特点 你定义的函数 你没有调用 最终有别人调用
+            this.input1 = a 把ref当前所处的节点放在组件实例自身上
+          */
+          return (
+            <div>
+              <input
+                ref={this.myRef}
+                type="text"
+                placeholder="点击按钮提示数据"
+              />
+              &nbsp;
+
+              <button ref="button1" onClick={this.showData}>
+                点我提示左侧数据
+              </button>
+              &nbsp;
+
+              <input
+                onBlur={this.showData2}
+                ref={this.myRef2}
+                type="text"
+                placeholder="失去焦点提示数据"
+              />
+              
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Demo a="1" b="2" />, document.getElementById("test1"));
+    </script>
+  </body>
+</html>

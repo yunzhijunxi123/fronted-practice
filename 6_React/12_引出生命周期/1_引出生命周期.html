@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test1"></div>
+    <!-- 引入react核心库 全局多了React-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM  全局多了ReactDOM-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入prop-types 用于对组件标签属性进行限制 全局多了PropTypes-->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+
+    <script type="text/babel">
+      class Life extends React.Component {
+        //生命周期回调函数 生命周期钩子函数
+        state = { opacity: 1 };
+
+        death = () => {
+          //作为事件的回调函数 this指向会丢 赋值语句解决存放位置在实例对象 箭头函数解决this指向
+          //卸载组件
+          ReactDOM.unmountComponentAtNode(document.getElementById("test1"));
+        };
+        //组件挂载完毕
+        componentDidMount() {
+          //与render同级别 由react弄出Life的实例对象 实例对象.componentDidMount()
+          this.timer = setInterval(() => {
+            let { opacity } = this.state;
+            opacity -= 0.05;
+            if (opacity <= 0) {
+              opacity = 1;
+            }
+            // this.setState({opacity:opacity})
+            this.setState({ opacity }); //一更新状态就render 开启定时器
+          }, 100);
+        }
+        //组件将要卸载
+        componentWillUnmount() {
+          //清除计时器
+          clearInterval(this.timer);
+        }
+        //初始化渲染 状态更新之后
+        render() {
+          return (
+            <div>
+              {/*外层花括号表示这里要执行js代码 内层创建对象*/}
+              <h2 style={{ opacity: this.state.opacity }}>
+                React学不会怎么办？
+              </h2>
+              <button onClick={this.death}>不活了</button>
+              <button onClick={this.action}>开始变化</button>
+            </div>
+          );
+        }
+      }
+      ReactDOM.render(<Life />, document.getElementById("test1"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="test1"></div>
+    <div id="test2"></div>
+    <div id="test3"></div>
+    <!-- 引入react核心库 全局多了React-->
+    <script type="text/javascript" src="../js/react.development.js"></script>
+    <!-- 引入react-dom 用于支持react操作DOM  全局多了ReactDOM-->
+    <script
+      type="text/javascript"
+      src="../js/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/babel.min.js"></script>
+    <!-- 引入prop-types 用于对组件标签属性进行限制 全局多了PropTypes-->
+    <script type="text/javascript" src="../js/prop-types.js"></script>
+
+    <script type="text/babel">
+      class Login extends React.Component {
+
+        //初始化状态
+        state ={
+          username: '',
+          password:''
+        }
+
+        //保存表单数据到状态中
+        saveFormdata = (dataType,event) =>{//saveFormdata返回的函数正是onChange
+          this.setState({[dataType]:event.target.value})
+        }
+        //表单提交的回调
+        handleSubmit = (event) =>{//event.target指的是form表单 
+            event.preventDefault();//阻止表单默认事件
+            const {username,password} = this.state
+            alert(`你输入的用户名是${username}，输入的密码是${password}`)//非受控 现用现取
+        }
+        render(){
+            return(
+                <form action="https://www.atguigu.com" onSubmit={this.handleSubmit}>
+                    {/*在login组件实例身上加了username 和 password*/}
+                    用户名：<input onChange={event=>this.saveFormdata('username',event)} type="text" name="username"/>
+                    密码：<input onChange={event=>this.saveFormdata('password',event)} type="password" name="password"/>
+                    <button>登录</button>
+                </form>
+            )
+        }
+      }
+      ReactDOM.render(<Login/>,document.getElementById('test1'))
+    </script>
+  </body>
+</html>
+

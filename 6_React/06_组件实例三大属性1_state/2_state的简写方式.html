@@ -38,12 +38,11 @@
                 箭头函数没有自己的this 如果使用了this关键字
                 找外层函数的this作为自己的this去使用
             */
-            //自定义方法 要用赋值语句的形式+箭头函数
+            //自定义方法 要用赋值语句的形式+箭头函数 赋值语句解决存放位置在实例对象 箭头函数解决this指向
             changeWeather = ()=>{//changeWeather自然放在实例对象自身
                 const isHot = this.state.isHot
                 this.setState({isHot:!isHot})
                 console.log(this);
-                
             }
         }
 
