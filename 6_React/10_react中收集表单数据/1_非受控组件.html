@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>非受控组件</title>
   </head>
   <body>
     <div id="test1"></div>
@@ -22,12 +22,15 @@
     <script type="text/javascript" src="../js/prop-types.js"></script>
 
     <script type="text/babel">
+      /*
+        非受控组件 数据由DOM本身控制
+      */
       class Login extends React.Component {
         handleSubmit = (event) =>{//event.target指的是form表单 
             event.preventDefault();//阻止表单默认事件
             const {username,password} = this
             alert(`你输入的用户名是${username.value}，输入的密码是${password.value}`)//非受控 现用现取
-            
+
         }
         render(){
             return(
