@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+        <style>
+            .list{
+                width: 200px;
+                height: 150px;
+                background-color: skyblue;
+                overflow: auto;
+            }
+            .news{
+                height: 30px;
+            }
+    </style>
+  </head>
+  <body>
+    <div id="test1"></div>
+    <!-- 引入react核心库 全局多了React-->
+    <script
+      type="text/javascript"
+      src="../js/17.0.1/react.development.js"
+    ></script>
+    <!-- 引入react-dom 用于支持react操作DOM  全局多了ReactDOM-->
+    <script
+      type="text/javascript"
+      src="../js/17.0.1/react-dom.development.js"
+    ></script>
+    <!-- 引入babel 用于将jsx转为js -->
+    <script type="text/javascript" src="../js/17.0.1/babel.min.js"></script>
+    <!-- 引入prop-types 用于对组件标签属性进行限制 全局多了PropTypes-->
+    <script type="text/javascript" src="../js/17.0.1/prop-types.js"></script>
+
+    <script type="text/babel">
+        class NewsList extends React.Component{
+          //状态初始化
+          state = {newsArr:[]}
+          componentDidMount(){
+            setInterval(()=>{
+              //获取原状态
+              const{newsArr}=this.state
+              //模拟一条新闻
+              const news ="新闻"+(newsArr.length+1)
+              //更新状态
+              this.setState({newsArr:[news,...newsArr]})
+            },1000)
+          }
+          getSnapshotBeforeUpdate(){//更新前截图
+            return this.refs.list.scrollHeight//更新前内容总高度
+          }
+          componentDidUpdate(preProps,preState,height){
+            this.refs.list.scrollTop += this.refs.list.scrollHeight-height//scrollTop元素滚动条距顶部距离 后面是更新后的完整高度-更新前的完整高度
+          }
+          render(){
+            return(
+                  <div className="list" ref="list">
+                    {
+                      this.state.newsArr.map((n,index)=>{//遍历数组的每个元素，返回一个新数组
+                        return <div key={index} className="news">{n}</div>
+                      })
+                    }
+                  </div>
+            )
+          }
+        }
+        ReactDOM.render(<NewsList/>,document.getElementById("test1"))
+    </script>
+  </body>
+</html>
