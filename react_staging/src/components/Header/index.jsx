@@ -1,8 +1,12 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types'
 import "./index.css"
 import { nanoid } from "nanoid";
 export default class Header extends Component {
-
+  //对接收的props进行 类型与必要性的限制
+  static propTypes ={
+    addTodo:PropTypes.func.isRequired
+  }
   handleKeyUp = (event)=>{
     const {keyCode,target} = event
     //不是回车就停掉
@@ -21,7 +25,6 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log(this.props.a);
     return (
       <div className="todo-header">
         <input onKeyUp={this.handleKeyUp} type="text" placeholder="请输入你的任务名称，按回车键确认" />
