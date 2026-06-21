@@ -1,0 +1,57 @@
+{
+  "posts": [
+    {
+      "id": "2",
+      "title": "another title",
+      "views": 200
+    },
+    {
+      "title": "今天天气不错",
+      "id": "Uw5snEjSNIg"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "QCxg_cf1L2A"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "Fv_zoddmWPU"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "VKkvrT_4m_4"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "4Jj647GNgLg"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "cAiFjORQ6wA"
+    },
+    {
+      "title": "今天天气不错",
+      "id": "y-VwDnm2Ock"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "text": "a comment about post 1",
+      "postId": null
+    },
+    {
+      "id": "2",
+      "text": "another comment about post 1",
+      "postId": null
+    },
+    {
+      "text": "XXXXXXX",
+      "id": "57edDSLF6uQ"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "$schema": "./node_modules/json-server/schema.json"
+}
