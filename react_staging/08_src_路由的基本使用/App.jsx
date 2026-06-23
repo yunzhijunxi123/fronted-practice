@@ -1,12 +1,7 @@
 ﻿import React, { Component } from "react";
-import { NavLink, Route ,Switch} from "react-router-dom";
-
-import Header from "./components/Header";//一般组件
-import MyNavLink from "./components/MyNavLink";
-
-import Home from "./pages/Home";//路由组件
-import About from "./pages/About";
-import Testa from "./pages/Testa";
+import { Link, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
 
 export default class App extends Component {
   /*
@@ -19,8 +14,7 @@ export default class App extends Component {
         <div className="row">
           <div className="col-xs-offset-2 col-xs-8">
             <div className="page-header">
-              {/* 一般组件不传就什么也收不到 */}
-              <Header a={1}/>
+              <h2>React Router Demo</h2>
             </div>
           </div>
         </div>
@@ -37,24 +31,24 @@ export default class App extends Component {
               </a> */}
 
                 {/* 在React中靠路由链接实现切换组件 编写路由链接 */}
-                {/* 用了NavLink 给谁加active 谁就高亮 */}
-                {/* 把公共的内容封装进MyNavLink */}
-                <MyNavLink to="/about"  a={1} b={2} c={3} >About</MyNavLink>
-                <MyNavLink to="/home">Home</MyNavLink>
 
+                <Link className="list-group-item" to="./about">
+                  {" "}
+                  About
+                </Link>
+                <Link className="list-group-item" to="./home">
+                  {" "}
+                  Home
+                </Link>
               </div>
             </div>
             <div className="col-xs-6">
               <div className="panel">
                 <div className="panel-body">
-                  {/*注册路由  Home是路由组件*/}
-                  {/* switch只匹配一次 */}
-                  <Switch>
-                    <Route path="/about" component={About} />
-                    <Route path="/home" component={Home} />
-                    <Route path="/home" component={Testa} />
-                  </Switch>
+                  {/*注册路由  */}
 
+                  <Route path="/about" component={About} />
+                  <Route path="/home" component={Home} />
                 </div>
               </div>
             </div>
