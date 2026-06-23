@@ -1,0 +1,70 @@
+﻿import React, { Component } from "react";
+import { NavLink, Route ,Switch,Redirect} from "react-router-dom";
+
+import Header from "./components/Header";//一般组件
+import MyNavLink from "./components/MyNavLink";
+
+import Home from "./pages/Home";//路由组件
+import About from "./pages/About";
+
+
+export default class App extends Component {
+  /*
+      1.点击链接，影响路径
+      2.路径变化 改变组件
+      通过监听URL变化，在固定布局中用<Route>动态替换<Switch>内的组件
+      ，实现无刷新切换页面的效果。
+  */
+  render() {
+    return (
+      <div>
+        <div className="row">
+          <div className="col-xs-offset-2 col-xs-8">
+            <div className="page-header">
+              {/* 一般组件不传就什么也收不到 */}
+              <Header a={1}/>
+            </div>
+          </div>
+        </div>
+
+          <div className="row">
+            <div className="col-xs-2 col-xs-offset-2">
+              <div className="list-group">
+                {/* 原生html 靠a标签跳转不同页面 */}
+                {/* <a className="list-group-item" href="./about.html">
+                About
+              </a>
+              <a className="list-group-item active" href="./home.html">
+                Home
+              </a> */}
+
+                {/* 在React中靠路由链接实现切换组件 编写路由链接 */}
+                {/* 用了NavLink 给谁加active 谁就高亮 */}
+                {/* 把公共的内容封装进MyNavLink */}
+                <MyNavLink to="/about"  a={1} b={2} c={3} >About</MyNavLink>
+                <MyNavLink to="/home">Home</MyNavLink>
+
+              </div>
+            </div>
+            <div className="col-xs-6">
+              <div className="panel">
+                <div className="panel-body">
+                  {/*注册路由  Home是路由组件*/}
+                  {/* switch只匹配一次 */}
+                  <Switch>
+                    {/* 最左前缀  exact={true}严格匹配 */}
+                    <Route path="/about" component={About} />
+                    <Route path="/home" component={Home} />
+                    {/* 上面都匹配不上 跳转到Redirect指向的路由 */}
+                    <Redirect to="/about"/>
+
+                  </Switch>
+
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    );
+  }
+}
