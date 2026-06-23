@@ -1,4 +1,4 @@
-//index.js入口文件
+﻿//index.js入口文件
 //引入react核心库
 import React from "react"
 //引入ReactDOM

@@ -5,7 +5,6 @@ export default class MyNavLink extends Component {
     console.log(this.props);
     
     return (
-        /*activeClassName="atguigu" 加上专属类名atguigu*/
       <NavLink
         activeClassName="atguigu"
         className="list-group-item"

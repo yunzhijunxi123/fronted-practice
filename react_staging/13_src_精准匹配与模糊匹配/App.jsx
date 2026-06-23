@@ -1,5 +1,5 @@
 ﻿import React, { Component } from "react";
-import { NavLink, Route ,Switch,Redirect} from "react-router-dom";
+import { NavLink, Route ,Switch} from "react-router-dom";
 
 import Header from "./components/Header";//一般组件
 import MyNavLink from "./components/MyNavLink";
@@ -11,9 +11,7 @@ import About from "./pages/About";
 export default class App extends Component {
   /*
       1.点击链接，影响路径
-      2.路径变化 改变组件
-      通过监听URL变化，在固定布局中用<Route>动态替换<Switch>内的组件
-      ，实现无刷新切换页面的效果。
+      2.路径变化
   */
   render() {
     return (
@@ -42,7 +40,7 @@ export default class App extends Component {
                 {/* 用了NavLink 给谁加active 谁就高亮 */}
                 {/* 把公共的内容封装进MyNavLink */}
                 <MyNavLink to="/about"  a={1} b={2} c={3} >About</MyNavLink>
-                <MyNavLink to="/home">Home</MyNavLink>
+                <MyNavLink to="/home/a/b">Home</MyNavLink>
 
               </div>
             </div>
@@ -53,11 +51,8 @@ export default class App extends Component {
                   {/* switch只匹配一次 */}
                   <Switch>
                     {/* 最左前缀  exact={true}严格匹配 */}
-                    <Route path="/about" component={About} />
-                    <Route path="/home" component={Home} />
-                    {/* 上面都匹配不上 跳转到Redirect指向的路由 */}
-                    <Redirect to="/about"/>
-
+                    <Route exact={true} path="/about" component={About} />
+                    <Route exact={true} path="/home" component={Home} />
                   </Switch>
 
                 </div>
