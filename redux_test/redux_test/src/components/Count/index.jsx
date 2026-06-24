@@ -1,40 +1,51 @@
 import React, { Component } from "react";
+//获取redux中保存的状态
+import store from "../../redux/store";
 
 export default class Count extends Component {
-  state = {count:0}
+  state = { carName: "奔驰" };
+
+/*   componentDidMount() {
+    //检测redux中状态的变化 只要变化 就调用render
+    store.subscribe(() => {
+      this.setState({}); //更新状态 帮忙调render     })
+    });
+  } */
+
   //加法
   increment = () => {
-    const {count} = this.state
-    const {value} = this.selectNumber
-    this.setState({count:count+value*1})
+    const { value } = this.selectNumber;
+    //通知redux加value
+    store.dispatch({ type: "increment", data: value * 1 });
+    //this.setState({count:count+value*1})
   };
   //减法
   decrement = () => {
-    const {count} = this.state
-    const {value} = this.selectNumber
-    this.setState({count:count-value*1})
+    const { value } = this.selectNumber;
+    //通知redux加value
+    store.dispatch({ type: "decrement", data: value * 1 });
+    //this.setState({count:count-value*1})
   };
   //奇数再加
   incrementIfOdd = () => {
-    const {count} = this.state
-    const {value} = this.selectNumber
-    if(count%2===1){
-        this.setState({count:count+value*1})
-    } 
-
+    const  count  = store.getState();//store.getState()拿到的已经是数字 不是对象
+    const { value } = this.selectNumber;
+    if (count % 2 != 0) {
+      store.dispatch({ type: "increment", data: value * 1 });
+    }
   };
   //异步加
   incrementAsync = () => {
-    const {count} = this.state
-    const {value} = this.selectNumber
+    const  count  = store.getState();
+    const { value } = this.selectNumber;
     setTimeout(()=>{
-        this.setState({count:count+value*1})
+        store.dispatch({ type: "increment", data: value * 1 });
     },500)
   };
   render() {
     return (
       <div>
-        <h1>当前求和为：{this.state.count}</h1>
+        <h1>当前求和为：{store.getState()}</h1>
         <select
           ref={(c) => {
             this.selectNumber = c;
