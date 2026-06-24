@@ -1,3 +1,4 @@
+﻿import 'antd/dist/reset.css';
 //index.js入口文件
 //引入react核心库
 import React from "react"
@@ -12,3 +13,4 @@ import App from "./App"
 //渲染App到页面
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render( <BrowserRouter><App/></BrowserRouter>)
+
