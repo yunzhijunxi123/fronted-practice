@@ -1,0 +1,16 @@
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
+export default class MyNavLink extends Component {
+  render() {
+    console.log(this.props);
+    
+    return (
+        /*activeClassName="atguigu" 加上专属类名atguigu*/
+      <NavLink
+        activeClassName="atguigu"
+        className="list-group-item"
+        {...this.props}//包含了to={to} 还包含props.children
+      />
+    );
+  }
+}

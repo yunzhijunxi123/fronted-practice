@@ -73,8 +73,7 @@ export default class Message extends Component {
 
         <button onClick={this.back}>回退</button>
         <button onClick={this.forward}>前进</button>
-        {/* go可表达回退与前进 */}
-        <button onClick={this.go}>go</button>
+        <button onClick={this.go}>go可表达回退与前进</button>
       </div>
     );
   }

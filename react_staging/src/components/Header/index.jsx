@@ -1,12 +1,29 @@
 import React, { Component } from 'react'
+import {withRouter} from "react-router-dom"
 
-export default class Header extends Component {
+class Header extends Component {
+
+  back =()=>{
+    this.props.history.goBack()
+  }
+  forward = ()=>{
+    this.props.history.goForward()
+  }
+  go = ()=>{
+    this.props.history.go(2)
+  }
   render() {
     //console.log("Header组件收到的props是：",this.props);
     return (
       <div>
         <h2>React Router Demo</h2>
+        <button onClick={this.back}>回退</button>
+        <button onClick={this.forward}>前进</button>
+        <button onClick={this.go}>go</button>
       </div>
+
     )
   }
 }
+//withRouter接收一般组件 加上路由组件特有的
+export default withRouter(Header)

@@ -10,34 +10,6 @@ export default class Message extends Component {
       { id: "03", title: "消息3" },
     ],
   };
-
-  pushShow = (id,title)=>{
-    //params参数
-    // this.props.history.push(`/home/message/detail/${id}/${title}`)
-    //search参数
-    this.props.history.push(`/home/message/detail?id=${id}&title=${title}`)
-    //state参数
-    this.props.history.push(`/home/message/detail`,{id,title})
-  }
-  replaceShow = (id,title)=>{
-    //params参数
-    // this.props.history.replace(`/home/message/detail/${id}/${title}`)
-    //search参数
-    this.props.history.replace(`/home/message/detail?id=${id}&title=${title}`)
-    //state参数
-    this.props.history.replace(`/home/message/detail`,{id,title})
-
-  }
-  back = ()=>{
-    this.props.history.goBack()
-  }
-  forward = ()=>{
-    this.props.history.goForward()
-  }
-  go = ()=>{
-    this.props.history.go(2)
-  }
-
   render() {
     console.log(this.props);
     
@@ -50,15 +22,10 @@ export default class Message extends Component {
               <li key={msgObj.id}>
                 {/* 向路由组件传递params参数 */}
                 {/* <Link to={`/home/message/detail/${msgObj.id}/${msgObj.title}`}>{msgObj.title}</Link> */}
-
                 {/* 向路由组件传递search参数 */}
                 {/* <Link to={`/home/message/detail/?id=${msgObj.id}&title=${msgObj.title}`}>{msgObj.title}</Link> */}
                 {/* 向路由组件传递state参数 */}
                 <Link to={{pathname:"/home/message/detail",state:{id:msgObj.id,title:msgObj.title}}}>{msgObj.title}</Link>
-
-                &nbsp;<button onClick={()=>this.pushShow(msgObj.id,msgObj.title)}>push查看</button>
-                &nbsp;<button onClick={()=>this.replaceShow(msgObj.id,msgObj.title)}>replace查看</button>
-
               </li>
             );
           })}
@@ -71,10 +38,6 @@ export default class Message extends Component {
         {/* 无需声明接收state参数  正常注册路由*/}
         <Route path="/home/message/detail/" component={Detail}/>
 
-        <button onClick={this.back}>回退</button>
-        <button onClick={this.forward}>前进</button>
-        {/* go可表达回退与前进 */}
-        <button onClick={this.go}>go</button>
       </div>
     );
   }
