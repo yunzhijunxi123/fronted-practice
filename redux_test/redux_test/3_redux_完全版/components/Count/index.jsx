@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-//获取redux中保存的状�?
+//获取redux中保存的状态
 import store from "../../redux/store";
 //引入actionCreator 专门用于创建对象
-import { createIncrementAction,createDecrementAction ,createIncrementAsyncAction } from "../../redux/count_action";
+import { createIncrementAction,createDecrementAction } from "../../redux/count_action";
 
 export default class Count extends Component {
   state = { carName: "奔驰" };
@@ -10,7 +10,7 @@ export default class Count extends Component {
 /*   componentDidMount() {
     //检测redux中状态的变化 只要变化 就调用render
     store.subscribe(() => {
-      this.setState({}); //更新状�?帮忙调render     })
+      this.setState({}); //更新状态 帮忙调render     })
     });
   } */
 
@@ -38,11 +38,11 @@ export default class Count extends Component {
   };
   //异步加
   incrementAsync = () => {
-    //const  count  = store.getState();
+    const  count  = store.getState();
     const { value } = this.selectNumber;
-    //setTimeout(()=>{
-     store.dispatch(createIncrementAsyncAction(value*1, 500));
-    //},500)
+    setTimeout(()=>{
+        store.dispatch(createIncrementAction(value*1));
+    },500)
   };
   render() {
     return (

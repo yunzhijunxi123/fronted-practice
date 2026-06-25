@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-//获取redux中保存的状�?
+//获取redux中保存的状态
 import store from "../../redux/store";
-//引入actionCreator 专门用于创建对象
-import { createIncrementAction,createDecrementAction ,createIncrementAsyncAction } from "../../redux/count_action";
 
 export default class Count extends Component {
   state = { carName: "奔驰" };
@@ -10,7 +8,7 @@ export default class Count extends Component {
 /*   componentDidMount() {
     //检测redux中状态的变化 只要变化 就调用render
     store.subscribe(() => {
-      this.setState({}); //更新状�?帮忙调render     })
+      this.setState({}); //更新状态 帮忙调render     })
     });
   } */
 
@@ -18,14 +16,14 @@ export default class Count extends Component {
   increment = () => {
     const { value } = this.selectNumber;
     //通知redux加value
-    store.dispatch(createIncrementAction(value*1));
+    store.dispatch({ type: "increment", data: value * 1 });
     //this.setState({count:count+value*1})
   };
   //减法
   decrement = () => {
     const { value } = this.selectNumber;
     //通知redux加value
-    store.dispatch(createDecrementAction(value*1));
+    store.dispatch({ type: "decrement", data: value * 1 });
     //this.setState({count:count-value*1})
   };
   //奇数再加
@@ -33,16 +31,16 @@ export default class Count extends Component {
     const  count  = store.getState();//store.getState()拿到的已经是数字 不是对象
     const { value } = this.selectNumber;
     if (count % 2 != 0) {
-      store.dispatch(createIncrementAction(value*1));
+      store.dispatch({ type: "increment", data: value * 1 });
     }
   };
   //异步加
   incrementAsync = () => {
-    //const  count  = store.getState();
+    const  count  = store.getState();
     const { value } = this.selectNumber;
-    //setTimeout(()=>{
-     store.dispatch(createIncrementAsyncAction(value*1, 500));
-    //},500)
+    setTimeout(()=>{
+        store.dispatch({ type: "increment", data: value * 1 });
+    },500)
   };
   render() {
     return (
