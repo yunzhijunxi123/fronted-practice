@@ -14,8 +14,9 @@ import store from "./redux/store"
 const root = ReactDOM.createRoot(document.getElementById("root"))
 root.render( <BrowserRouter><App/></BrowserRouter>)
 
+//检测redux中状态的改变 若redux的状态发生了改变 重新渲染App组件
 store.subscribe(()=>{
-    const root = ReactDOM.createRoot(document.getElementById("root"))
+    // const root = ReactDOM.createRoot(document.getElementById("root"))
     root.render( <BrowserRouter><App/></BrowserRouter>)
 })
 // import React from "react";

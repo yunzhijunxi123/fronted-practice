@@ -2,6 +2,7 @@
     该文件专门为Count组件生成action对象
 */
 import { INCREMENT,DECREMENT } from "./constant"
+
 //同步action 直接返回普通对象
 export const createIncrementAction = data =>({type:INCREMENT,data})//前面是接到data
 export const createDecrementAction = data =>({type:DECREMENT,data})
