@@ -16,7 +16,6 @@ import { Provider } from "react-redux";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    {/*用Provider包裹App 让App所有的后代容器组件都能接收到store  */}
     <Provider store={store}>
       <App />
     </Provider>

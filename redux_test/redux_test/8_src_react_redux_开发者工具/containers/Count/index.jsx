@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 //引入Action
 import {
-  increment,
-  decrement,
-  incrementAsync,
+  createIncrementAction,
+  createDecrementAction,
+  createIncrementAsyncAction,
 } from "../../redux/actions/count";
 //引入connect用于连接UI组件与redux
 import { connect } from "react-redux";
@@ -22,30 +22,30 @@ class Count extends Component {
   //加法
   increment = () => {
     const { value } = this.selectNumber;
-    this.props.increment(value * 1);
+    this.props.add(value * 1);
   };
   //减法
   decrement = () => {
     const { value } = this.selectNumber;
-    this.props.decrement(value * 1);
+    this.props.sub(value * 1);
   };
   //奇数再加
   incrementIfOdd = () => {
     const { value } = this.selectNumber;
     if (this.props.count % 2 !== 0) {
-      this.props.increment(value * 1);
+      this.props.add(value * 1);
     }
   };
   //异步加
   incrementAsync = () => {
     const { value } = this.selectNumber;
-    this.props.incrementAsync(value * 1, 500);
+    this.props.addAsync(value * 1, 500);
   };
   render() {
     //console.log("UI组件接收到的props是",this.props);
     return (
       <div>
-        <h2>我是Count组件,下方组件人数为{this.props.persons}</h2>
+        <h2>我是Count组件,下方组件人数为{this.props.renshu}</h2>
         <h4>当前求和为: {this.props.count}</h4>
         <select
           ref={(c) => {
@@ -69,12 +69,12 @@ class Count extends Component {
 
 //创建并暴露一个Count的容器组件 核心！！！
 export default connect(
-  (state) => ({ count: state.num,persons:state.people.length}),
+  (state) => ({ count: state.num,renshu:state.people.length}),
 
   {
-    increment,
-    decrement,
-    incrementAsync,
+    add:createIncrementAction,
+    sub:createDecrementAction,
+    addAsync:createIncrementAsyncAction,
   }
 )(Count);
 // const CountContainer = connect()(CountUI)
