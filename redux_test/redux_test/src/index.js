@@ -1,4 +1,4 @@
-//index.js入口文件
+﻿//index.js入口文件
 //引入react核心库
 import React from "react";
 //引入ReactDOM
@@ -6,7 +6,7 @@ import ReactDOM from "react-dom/client";
 //引入
 import { BrowserRouter } from "react-router-dom";
 //引入App组件
-import App from "./App";
+import App from "./App.jsx";
 
 import store from "./redux/store";
 
