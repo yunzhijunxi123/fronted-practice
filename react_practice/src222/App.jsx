@@ -15,7 +15,7 @@ export default function App() {
       <div className="row">
         <div className="col-xs-2 col-xs-offset-2">
           <div className="list-group">
-            {/*路由连接*/}
+            {/* 路由链接 */}
             <NavLink className="list-group-item" to="/about">
               About
             </NavLink>
@@ -27,7 +27,7 @@ export default function App() {
         <div className="col-xs-6">
           <div className="panel">
             <div className="panel-body">
-              {/*注册路由 一个匹配上了 剩下的不会匹配*/}
+              {/* 注册路由  一个匹配上了 剩下的不会匹配 */}
               {element}
             </div>
           </div>

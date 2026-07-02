@@ -1,4 +1,4 @@
-﻿import { Outlet, useNavigate } from "react-router"
+import { Outlet, useNavigate } from "react-router"
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -11,7 +11,7 @@ export default function Message() {
   const navigate = useNavigate();
 
   function showDetail(m) {
-    navigate("detail", {
+    navigate(`detail/${m.id}`, {
       state: { id: m.id, title: m.title, content: m.content },
     });
   }
@@ -22,22 +22,19 @@ export default function Message() {
         {messages.map((m) => {
           return (
             <li key={m.id}>
-              {/* 声明式跳转 */}
               <Link
-                to="detail"
+                to={`detail/${m.id}`}
                 state={{ id: m.id, title: m.title, content: m.content }}
               >
                 {m.title}
               </Link>
               &nbsp;&nbsp;
-              {/* 编程式跳转 */}
               <button onClick={() => showDetail(m)}>查看详情</button>
             </li>
           );
         })}
       </ul>
       <hr />
-      {/* 渲染子路由 */}
       <Outlet />
     </div>
   );

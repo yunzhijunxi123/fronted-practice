@@ -22,7 +22,7 @@ export default [
         element: <Message />,
         children: [
           {
-            path: "detail",
+            path: "detail/:id",
             element: <Detail />,
           },
         ],
