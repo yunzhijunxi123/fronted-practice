@@ -11,14 +11,16 @@ const students = [
 ];
 
 export default function SearchBox() {
+  //空字符串 表示用户还未输入任何内容
   const [keyword, setKeyword] = useState("");
   const [result, setResult] = useState(students);
 
-  //进行副作用处理 监听keyword的变化
+  //进行副作用处理 当keyword变化时，执行useEffect函数
   useEffect(() => {
-    const filtered = students.filter((s) =>
+    const filtered = students.filter((s) =>//filter此处必须接收返回值
       s.name.includes(keyword)//字符串匹配过渡
     );
+    //过滤了结果 更新了result
     setResult(filtered);
   }, [keyword]);
 
@@ -32,6 +34,7 @@ export default function SearchBox() {
         onChange={(e) => setKeyword(e.target.value)}
       />
       <ul>
+        {/* 渲染结果列表 */}
         {result.length > 0 ? (
           result.map((s) => (
             <li key={s.id}>

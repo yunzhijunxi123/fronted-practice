@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 export default function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <h3>Home</h3>
       <div>
         <ul className="nav nav-tabs">
           <li>

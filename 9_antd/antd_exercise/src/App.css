@@ -1,0 +1,8 @@
+﻿/* 全局重置 */
+body {
+  margin: 0;
+  background: #f0f2f5;
+}
+.App {
+  min-height: 100vh;
+}
