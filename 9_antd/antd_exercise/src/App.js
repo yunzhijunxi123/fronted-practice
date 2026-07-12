@@ -3,6 +3,7 @@ import GridLayout from "./components/GridLayout";
 import TableFilter from "./components/TableFilter";
 import FormDemo from "./components/FormDemo";
 import FilterForm from "./components/FilterForm";
+import FilterForm2 from "./components/FilterForm2";
 import "antd/dist/antd.css";
 import "./App.css";
 
@@ -12,7 +13,7 @@ function App() {
       <GridLayout />
       <TableFilter />
       <FormDemo />
-      <FilterForm />
+      <FilterForm2/>
     </div>
   );
 }

@@ -17,13 +17,14 @@ const { Title } = Typography;
 const { RangePicker } = DatePicker;
 
 //描述表单字段的类型 四个都是可选字段
+//用户填完的值
 interface FormValues {
   dateRange?: [moment.Moment, moment.Moment];
   city?: string;
   region?: (string | number)[];
   amount?: number;
 }
-
+//返回给后端的值
 interface OutputValues {
   dateRange?: [number, number];
   city?: string;
@@ -51,7 +52,7 @@ const regionOptions = [
   },
 ];
 
-//把 "" 或 null 统一转成 undefined，保证输出干净 T为泛型
+//把 "" 或 null 统一转成 undefined，保证输出干净 T为泛型 解释任意类型的数据
 const toUndefined = <T,>(v: T): T | undefined => {
   if (v === "" || v === null) return undefined;
   return v;
@@ -59,6 +60,7 @@ const toUndefined = <T,>(v: T): T | undefined => {
 
 //组件
 export default function FilterForm() {
+  //读方向 Form.useForm() 内部 store ──→ 通过 name 属性映射 ──→ 渲染 
   const [form] = Form.useForm<FormValues>();
   //用户点击了 htmlType="submit" 的按钮，且所有校验通过  触发onFinish 处理函数
   const onFinish = (raw: FormValues) => {
@@ -80,6 +82,7 @@ export default function FilterForm() {
 
     message.success("提交成功，查看控制台");
     console.log("提交数据：", output);
+    //把output对象转成格式化的JSON字符串
     alert(JSON.stringify(output, null, 2));
   };
 

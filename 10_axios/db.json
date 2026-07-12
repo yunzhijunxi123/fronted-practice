@@ -1,0 +1,75 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "文章1",
+      "author": "zhangsan"
+    },
+    {
+      "id": "2",
+      "title": "文章2",
+      "author": "lisi"
+    },
+    {
+      "id": "3"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "tdFtfF-Zcqk"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "v_wJtrJKvGg"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "r61M45814bI"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "lOspJ1vf-3Y"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "ZGuDdtCVgf8"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "3IB3WJXrfvg"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "IlyaXwRLRzA"
+    },
+    {
+      "title": "今天天气不错 风和日丽",
+      "author": "李白",
+      "id": "L0r5FoZHehs"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "评论1",
+      "postId": 1
+    },
+    {
+      "id": "2",
+      "body": "评论2",
+      "postId": 1
+    },
+    {
+      "id": "_STFGgPNb3o",
+      "body": "58277",
+      "postId": 1
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

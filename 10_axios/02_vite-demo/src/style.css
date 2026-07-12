@@ -1,0 +1,55 @@
+﻿/* ==========================================
+   样式文件 — 支持 CSS Modules、PostCSS 等
+   Vite 默认支持 .css 直接 import
+   ========================================== */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#app {
+  text-align: center;
+  background: #16213e;
+  padding: 40px 60px;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+
+.tip {
+  color: #a0a0b0;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+#counter h2 {
+  font-size: 2rem;
+  color: #ffd700;
+  margin: 16px 0;
+}
+
+button {
+  font-size: 1.2rem;
+  padding: 10px 32px;
+  border: none;
+  border-radius: 8px;
+  background: #0f3460;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: #e94560;
+}
